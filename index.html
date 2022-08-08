@@ -1,0 +1,2824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>NewReach</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <style>
+    body{
+      overflow-x: hidden;
+    }
+        *{
+          padding: 0;
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        #navbar{
+          width: 100%;
+          height: 120px;
+          display: flex;
+          position: sticky;
+          top: 0;
+          z-index: 100;
+          justify-content: space-around;
+          align-items: center;
+          background-color: white;
+        }
+        #logo{
+          width: 15%;
+          height: 60px;
+          /* background-color: lightseagreen; */
+        }
+        #logo img{
+          width: 80%;
+          height: 100%;
+        }
+        #nav{
+          width: 40%;
+          height: max-content;
+          /* background-color: green; */
+        }
+        #nav ul{
+          list-style: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+        }
+        #nav ul li a{
+          color: black;
+          text-decoration: none;
+        }
+        #nav ul li{
+          height: 70px;
+          display: flex;
+          align-items: center;
+          /* background-color: burlywood; */
+        }
+        #li-1-hide-image{
+          width: 70px;
+          height: 40px;
+          top: 10vh;
+          opacity: 0; 
+          overflow: hidden; 
+          /* left: auto; */
+          /* background-color: royalblue; */
+          position: absolute;
+        }
+        #nav ul li:hover #li-1-hide-image{
+          opacity: 1;
+          animation: nav-slide 0.4s;
+        }
+        @keyframes nav-slide {
+          0%{width: 0px;}
+          100%{width: 70px;}
+        }
+        #li-1-hide-image img{
+          width: 70px;
+        }
+        #li-1-hide:hover{
+          display: block;
+        }
+        #nav ul li:hover #li-1-hide{
+          /* opacity: 1; */
+          display: block;
+          animation: li-slide1-hide 0.5s;
+        }
+        @keyframes li-slide1-hide {
+          0%{margin-top: 50px;opacity: 0;}
+          50%{opacity: 0.5;}
+          100%{margin-top: 0px;}
+        }
+        #li-1-hide{
+          width: 900px;
+          height: 400px;
+          position: absolute;
+          top: 100px;
+          left: 300px;
+          display: none;
+          /* opacity: 0; */
+          border-radius: 10px;
+          z-index: 10;
+          /* display: flex; */
+          box-shadow: 5px 5px 10px 0 gray;
+          background-color: white;
+        }
+        #li-1-hide-left{
+          width: 50%;
+          height: 350px;
+          border-right: 1px solid silver;
+          margin-top: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          /* background-color: lightcoral;    */
+        }
+        #hide-left-1{
+          width: 70%;
+          height: 30%;
+          /* background-color: skyblue; */
+        }
+        #hide-left-1:hover #hide-left-1-image img{
+          margin-top: 2px;
+        }
+        #hide-left-1:hover #hide-left-1-heading{
+          color: rgb(0,200,175);
+        }
+        #hide-left-1-image{
+          width: 30%;
+          height: 70px;
+          /* background-color: teal; */
+        }
+        #hide-left-1-image img{
+          width: 80%;
+          height: 50px;
+          transition: 0.6s;
+          margin-top: 10px;
+        }
+        #hide-left-1-heading{
+          width: 60%;
+          height: 40px;
+          margin-left: 30%;
+          margin-top: -70px;
+          transition: 0.4s;
+          font-size: 20px;
+          /* background-color: lightgreen; */
+        }
+        #hide-left-1-para{
+          width: 70%;
+          height: 60px;
+          font-size: 15px;
+          margin-left: 30%;
+          /* margin-top: -70px; */
+          /* background-color: darkgoldenrod; */
+        }
+
+
+        #li-1-hide-right{
+          width: 40%;
+          float: right;
+          height: 350px;
+          margin-top: -350px;
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: column;
+          /* background-color: lightcoral;   */
+        }
+        #hide-right-1{
+          width: 90%;
+          height: 30%;
+          margin-top: 10px;
+          /* background-color: skyblue; */
+        }
+        #hide-right-1:hover #hide-right-1-image img{
+          margin-top: 2px;
+        }
+        #hide-right-1:hover #hide-right-1-heading{
+          color: rgb(0,200,175);
+        }
+        #hide-right-1-image{
+          width: 30%;
+          height: 70px;
+          /* background-color: teal; */
+        }
+        #hide-right-1-image img{
+          width: 80%;
+          height: 50px;
+          transition: 0.6s;
+          margin-top: 10px;
+        }
+        #hide-right-1-heading{
+          width: 60%;
+          height: 40px;
+          margin-left: 30%;
+          margin-top: -70px;
+          transition: 0.4s;
+          font-size: 20px;
+          /* background-color: lightgreen; */
+        }
+        #hide-right-1-para{
+          width: 70%;
+          height: 60px;
+          font-size: 15px;
+          margin-left: 30%;
+          /* margin-top: -70px; */
+          /* background-color: darkgoldenrod; */
+        }
+
+
+
+
+        #li-2-hide:hover{
+          display: block;
+        }
+        #nav ul li:hover #li-2-hide{
+          /* opacity: 1; */
+          display: block;
+          animation: li-slide1-hide 0.5s;
+        }
+        @keyframes li-slide1-hide {
+          0%{margin-top: 50px;opacity: 0;}
+          50%{opacity: 0.5;}
+          100%{margin-top: 0px;}
+        }
+        #li-2-hide{
+          width: 700px;
+          height: 300px;
+          position: absolute;
+          top: 100px;
+          left: 500px;
+          z-index: 10;
+          display: none;
+          /* opacity: 0; */
+          box-shadow: 5px 5px 10px 0 gray;
+          border-radius: 10px;
+          background-color: white;
+        }
+        #li-2-hide-left{
+          width: 50%;
+          height: 250px;
+          margin-top: 20px;
+          margin-left: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-evenly;
+          border-right: 1px solid silver;
+          /* background-color: hotpink; */
+        }
+        #li-2-hide-left-1:hover h3{
+          color: rgb(0,200,175);
+          cursor: pointer;
+          }
+          #li-2-hide-left-1:hover h3{
+            transition: 0.4s;
+          }
+          #li-2-hide-left-2:hover h3{
+            transition: 0.4s;
+          }
+        #li-2-hide-left-2:hover h3{
+          color: rgb(0,200,175);
+          cursor: pointer;
+        }
+        #li-2-hide-left-1{
+          width: 90%;
+          height: 100px;
+          /* background-color: slategray; */
+        }
+        #li-2-hide-left-2{
+          width: 90%;
+          height: 100px;
+          /* background-color: darkmagenta; */
+        }
+        #li-2-hide-right{
+          width: 45%;
+          height: 250px;
+          margin-top: -250px;
+          margin-left: 55%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-evenly;
+          /* background-color: pink; */
+        }
+
+
+        #login{
+          /* width: 20%; */
+          /* height: 60px; */
+          width: max-content;
+          height: max-content;
+          /* background-color: seagreen; */
+          display: flex;
+          cursor: pointer;
+          align-items: center;
+        }
+        #login button{
+          border: none;
+          border-radius: 10px;
+          font-size: 15px;
+          color: white;
+          background-color: rgb(0,200,175);
+          /* position: absolute; */
+          padding: 15px 20px;
+          transition: 0.8s;
+          box-shadow: 2px 2px 10px 0 rgb(0,200,175);
+        }
+        #login button:hover{
+          cursor: pointer;
+          background-color: black;
+        }
+        
+
+
+
+
+        /* -----------------------------------------Home-Content------------------- */
+
+
+
+        #home-main{
+          width: 90%;
+          height: 500px;
+          /* background-color: lightskyblue; */
+          margin-left: 10%;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+        }
+        #home-content{
+          width: 32%;
+          height: 450px;
+          /* background-color: blue; */
+          /* margin-left: 10%; */
+        }
+        #home-content-heading{
+          width: 90%;
+          font-weight: bold;
+          margin-top: 100px;
+          font-size: 35px;
+          color: black;
+          line-height: 40px;
+        }
+        #home-content-para{
+          width: 90%;
+          font-size: 20px;
+          line-height: 40px;
+          color: gray;
+        }
+        #home-content button{
+          border: none;
+          border-radius: 10px;
+          font-size: 15px;
+          color: white;
+          background-color: rgb(0,200,175);
+          /* position: absolute; */
+          padding: 20px 30px;
+          transition: 0.8s;
+          margin-top: 20px;
+          box-shadow: 2px 2px 10px 0 rgb(0,200,175);
+        }
+        #home-content button:hover{
+          cursor: pointer;
+          background-color: black;
+        }
+
+        #home-content img{
+          width: 100%;
+        }
+
+        #cards-move-main{
+          width: 50vw;
+          height: 40vh;
+          display: flex;
+          align-items: center;
+          position: absolute;
+          margin-left: 40%;
+          margin-top: 100px;
+          overflow: hidden;
+          z-index: -1;
+          /* background-color: indigo; */
+        }
+        #cards-move{
+          width: 120vw;
+          height: 30vh;
+          display: flex;
+          position: absolute;
+          justify-content: space-evenly;
+          align-items: center;
+          animation: cards-move 10s linear infinite;
+          /* background-color: greenyellow; */
+        }
+        @keyframes cards-move {
+            
+            0%{margin-left: -50vw;}
+            100%{margin-left: 0vw;}
+
+        }
+        #card-move-1{
+          width: 100px;
+          height: 150px;
+          /* background-color: indianred; */
+        }
+        #card-move-1 img{
+          width: 100%;
+        }
+
+        #massage{
+          width: 200px;
+          height: 80px;
+          margin-top: -40vh;
+          margin-left: 48%;
+          /* background-color: indigo; */
+          position: absolute;
+        }
+        #massage img{
+          animation: message-move 3s linear infinite;
+          width: 100%;
+        }
+        @keyframes message-move {
+
+              0%{margin-top: 0px;}
+              50%{margin-top: 10px;}
+              100%{margin-top: 0px;}
+
+        }
+
+        #massage-2{
+          width: 200px;
+          height: 80px;
+          margin-top: 35vh;
+          margin-left: 30%;
+          /* background-color: indigo; */
+          position: absolute;
+        }
+        #massage-2 img{
+          animation: message-move-2 2.5s linear infinite;
+          width: 100%;
+        }
+        @keyframes message-move-2 {
+
+              0%{margin-top: 0px;}
+              50%{margin-top: 10px;}
+              100%{margin-top: 0px;}
+
+        }
+
+        #horn{
+          width: 70px;
+          position: absolute;
+          height: 40px;
+          margin-top: 24vh;
+          margin-left: 46vw;
+        }
+        #horn #image1{
+          width: 100%;
+        }
+        #horn #image2{
+          width: 15px;
+          margin-top: 1vh;
+          margin-left: 5vw;
+          transform: rotate(-20deg);
+          position: absolute;
+          animation: horn-image 1.5s linear infinite;
+        }
+        @keyframes horn-image {
+          
+            0%{opacity: 1;}
+            50%{opacity: 0;}
+            0%{opacity: 1;}
+
+        }
+      
+
+        #wave-parent{
+          width: 19.5vw;
+          height: 33vh;
+          margin-left: 64.5vw;
+          margin-top: 10vh;
+          position: absolute;
+          overflow: hidden;
+          border-radius: 50%;
+          /* background-color: aqua; */
+        }
+        #wave{
+          /* width: 30vw; */
+          /* height: 10vh; */
+          /* margin-left: 60vw; */
+          margin-top: 18vh;
+          /* position: absolute; */
+          display: flex;
+          animation: wave-move 10s linear infinite;
+          /* background-color: indigo; */
+        }
+        @keyframes wave-move {
+          
+            0%{margin-left: 0px;}
+            100%{margin-left: -300px;}
+
+        }
+        #wave #wave-image1{
+          width: 20vw;          
+          height: 8vh;
+        }
+        #wave #wave-image2{
+          width: 20vw;          
+          height: 8vh;
+          margin-left: -0.6vw;
+        }
+        
+        #search-main{
+          width: 20vw;
+          height: 4vh;
+          position: absolute;
+          border-radius: 30px;
+          overflow: hidden;
+          margin-left: 64vw;
+          margin-top: -5vh;
+          border: 2px solid black;
+          background-color: rgb(117,223,252);
+        }
+        #search-main hr{
+          width: 10vw;
+          height: 0.1vh;
+          margin-top: -2.1vh;
+          margin-left: 10vw;
+          background-color: black;
+        }
+        #search{
+          width: 12vw;
+          height: 4vh;
+          position: relative;
+          border-radius: 30px;
+          /* background-color: blue; */
+        }
+        #search-dots{
+          width: 15vw;
+          height: 4vh;
+          margin-top: -2vh;
+          margin-left: 1vw;
+          border-radius: 30px;
+          animation: search-dots-move 10s linear infinite;
+          /* background-color: blue; */
+        }
+        #search-dots img{
+          width: 100%;
+        }
+        @keyframes search-dots-move {
+          
+
+            0%{margin-left: 1vw;}
+            100%{margin-left: 12vw;}
+
+        }
+        #search img{
+          margin-top: -0.4vh;
+          height: 135%;
+          width: 100%;
+        } 
+        #graph-line{
+          animation: graph-line 10s linear infinite;
+          width: 78px;
+          height: 80px;
+          position: absolute;
+          margin-left: 65.5vw;
+          margin-top: -20vh;
+          overflow: hidden;
+          /* background-color: blueviolet; */
+        }
+        @keyframes graph-line {
+          
+            0%{width: 0px;}
+            40%{width: 78px;}
+            60%{width: 78px;}
+            90%{width: 0px;}
+            100%{width: 0px;}
+
+        }
+        #graph-line img{
+          width: 78px;
+        }
+        #circle-orange{
+          width: 150px;
+          height: 150px;
+          z-index: -1;
+          margin-left: 28vw;
+          margin-top: -40vh;  
+          position: absolute;
+        }
+        #circle-orange img{
+          width: 100%;
+        }
+        #circle-pink{
+          width: 70px;
+          height: 70px;
+          z-index: 1;
+          margin-left: 85vw;
+          margin-top: -20vh;  
+          position: absolute;
+        }
+        #circle-pink img{
+          width: 100%;
+        }
+
+        #opacity-dots{
+          width: 100px;
+          height: 80px;
+          margin-left: 78vw;
+          margin-top: -26vh;
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          /* background-color: brown; */
+        }
+        #opacity-dots-1{
+          width: 90%;
+          height: 18px;
+          display: flex;
+          flex-direction: row;
+          /* background-color: cadetblue; */
+        }
+        #opacity-dots-1-a{
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          animation: dot-1-a 5s linear infinite;  
+          border: 1px solid black;
+        }
+        @keyframes dot-1-a {
+            0%{opacity: 0;}
+            20%{opacity: 1;}
+            80%{opacity: 1;}
+            100%{opacity: 0;}
+        }
+        #opacity-dots-1-b{
+          width: 10px;
+          height: 10px;
+          animation: dot-1-b 5s linear infinite;  
+          border-radius: 50%;
+          background-color: rgb(0,200,175);
+        }
+        @keyframes dot-1-b {
+            0%{opacity: 1;}
+            30%{opacity: 0;}
+            40%{opacity: 0;}
+            90%{opacity: 1;}
+            100%{opacity: 0;}
+        }
+        #opacity-dots-1-c{
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          background-color: orange;
+        }
+
+        #opacity-dots-1-d{
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          border: 1px solid black;
+          animation: dot-1-a 6s linear infinite;  
+          /* background-color: rgb(0,200,175); */
+        }
+        #opacity-dots-1-e{
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          background-color: rgb(0,200,175);
+        }
+        #opacity-dots-1-f{
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          border: 1px solid black;
+          /* background-color: orange; */
+        }
+
+        #opacity-dots-1-g{
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          animation: dot-1-g 4s linear infinite;
+          /* border: 1px solid black; */
+          background-color : purple;
+        }
+        @keyframes dot-1-g {
+          
+            0%{opacity: 1;}
+            50%{opacity: 1;}
+            60%{opacity: 0;}
+            100%{opacity: 1;}
+
+        }
+        #opacity-dots-1-h{
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          border: 1px solid black;
+          /* background-color: rgb(0,200,175); */
+        }
+        #opacity-dots-1-i{
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          animation: dot-1-i 5s linear infinite;  
+          border: 1px solid black;
+          /* background-color: orange; */
+        }
+        @keyframes dot-1-i {
+            0%{opacity: 1;}
+            20%{opacity: 0;}
+            40%{opacity: 1;}
+            80%{opacity: 1;}
+            100%{opacity: 0;}
+        }
+        #opacity-dots-1-j {
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          /* border: 1px solid black; */
+          background-color: rgb(0,200,175);
+        }
+
+
+        /* --------------------------------------Agency---------------------------- */
+
+
+
+        #agency{
+          width: 100vw;
+          height: 170vh;
+          padding: 1px;
+          /* background-color: lightseagreen; */
+        }
+        #agency-brand{
+          width: 90%;
+          height: 20vh;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
+          margin: 10vh auto;
+          /* background-color: lightslategrey; */
+        }
+        #agency-brand-image1{
+          width: max-content;
+          height: max-content;
+          /* background-color: magenta; */
+        }
+        #agency-brand-image1 img{
+          width: 120px;
+        }
+        #agency-circle{
+          width: 300px;
+          height: 300px;
+          position: absolute;
+          margin: -20vh -170px;
+          /* background-color: limegreen; */
+        }
+        #agency-circle img{
+          width: 100%;
+        }
+        #agency-text{
+          width: 80%;
+          height: 40vh;
+          margin: 10vh auto;
+          /* background-color: darkgreen; */
+        }
+        #agency-text-heading{
+          text-align: center;
+          font-size: 40px;
+          color: black;
+          font-weight: bold;
+        }
+        #agency-text-para{
+          width: 75%;
+          line-height: 30px;
+          margin: 3vh auto;
+          text-align: center;
+          font-size: 20px;
+          color: black;
+        }
+        #agency-text button{
+          border: none;
+          border-radius: 10px;
+          font-size: 15px;
+          color: white;
+          background-color: rgb(0,200,175);
+          /* position: absolute; */
+          padding: 20px 30px;
+          transition: 0.8s; 
+          margin-top: 20px;
+          margin-left: 35vw;
+          box-shadow: 2px 2px 10px 0 rgb(0,200,175);
+        }
+        #agency-text button:hover{
+          cursor: pointer;
+          background-color: black;
+        }
+
+        #agency-image{
+          width: 100%;
+          height: 80vh;
+          /* margin: 20vh auto; */
+          /* background-color: darkgoldenrod; */
+        }
+        #agency-image img{
+          width: 100%;
+        }
+        #agency-image iframe{
+          position: absolute;
+          margin-left: -74.5vw;
+          margin-top: 9vh;
+        }
+
+
+
+        /* ------------------------------------Access------------------------------ */
+
+
+
+
+        #access{
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+          /* background-color: aquamarine; */
+        }
+        #access-text{
+          width: 500px;
+          height: 500px;
+          /* background-color: darkgreen; */
+        }
+        #access-text-para1{
+          font-size: 18px;
+          color: black;
+          margin-top: 5vh;
+          margin-left: 3vw;
+        }
+        #access-text-heading{
+          font-size: 35px;
+          margin-top: 3vh;
+          color: black;
+          margin-left: 3vw;
+          width: 22vw;
+          font-weight: bold;
+        }
+        #access-text-para2{
+          color: gray;
+          line-height: 32px;
+          font-size: 18px;
+          margin-left: 3vw;
+          color: black;
+          margin-top: 3vh;
+        }
+        #access-text button{
+          padding: 16px 25px;
+          border: none;
+          margin-left: 3vw;
+          margin-top: 4vh;
+          box-shadow: 5px 5px 10px 0 rgb(0,200,175);
+          border-radius: 10px;
+          background-color: rgb(0,200,175);
+          color: white;
+          transition: 0.5s;
+          font-size: 16px;
+        }
+        #access-text button:hover{
+          cursor: pointer;
+          background-color: black;
+        }
+        #access-image{
+          width: 800px;
+          height: 500px;
+          /* background-color: darkkhaki; */
+        }
+        #access-image-1{
+          width: 100%;
+        }
+        #access-image-2{
+          width: 12%;
+          transition: 0.6s;
+          margin-top: 18vh;
+          margin-left: -42vw;
+          position: absolute;
+        }
+        #access-image-3{
+          width: 14%;
+          transition: 1s;
+          margin-top: 14vh;
+          margin-left: -25vw;
+          position: absolute;
+        }
+
+        
+
+
+        /* ------------------------------------Create------------------------------ */
+
+
+
+
+        #create{
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+          /* background-color: aquamarine; */
+        }
+        #create-text{
+          width: 500px;
+          height: 500px;
+          /* background-color: darkgreen; */
+        }
+        #create-text-para1{
+          font-size: 18px;
+          color: black;
+          margin-top: 5vh;
+          margin-left: 3vw;
+        }
+        #create-text-heading{
+          font-size: 32px;
+          margin-top: 3vh;
+          color: black;
+          margin-left: 3vw;
+          /* width: 22vw; */
+          font-weight: bold;
+        }
+        #create-text-para2{
+          color: gray;
+          line-height: 32px;
+          font-size: 18px;
+          margin-left: 3vw;
+          color: black;
+          margin-top: 3vh;
+        }
+        #create-text button{
+          padding: 16px 25px;
+          border: none;
+          margin-left: 3vw;
+          margin-top: 4vh;
+          box-shadow: 5px 5px 10px 0 rgb(0,200,175);
+          border-radius: 10px;
+          background-color: rgb(0,200,175);
+          color: white;
+          transition: 0.5s;
+          font-size: 16px;
+        }
+        #create-text button:hover{
+          cursor: pointer;
+          background-color: black;
+        }
+        #create-image{
+          width: 800px;
+          height: 500px;
+          /* background-color: darkkhaki; */
+        }
+        #create-image-1{
+          width: 100%;
+        }
+        #create-image-2{
+          width: 8%;
+          transition: 0.6s;
+          margin-top: 21.5vh;
+          margin-left: -44.5vw;
+          position: absolute;
+        }
+        #create-image-3{
+          width: 12%;
+          transition: 0.6s;
+          margin-top: 10vh;
+          margin-left: -49vw;
+          position: absolute;
+        }
+        
+
+        
+
+
+        /* ------------------------------------Manage------------------------------ */
+
+
+
+
+        #manage{
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+          /* background-color: aquamarine; */
+        }
+        #manage-text{
+          width: 500px;
+          height: 500px;
+          /* background-color: darkgreen; */
+        }
+        #manage-text-para1{
+          font-size: 18px;
+          color: black;
+          margin-top: 5vh;
+          margin-left: 3vw;
+        }
+        #manage-text-heading{
+          font-size: 35px;
+          margin-top: 3vh;
+          color: black;
+          margin-left: 3vw;
+          /* width: 22vw; */
+          font-weight: bold;
+        }
+        #manage-text-para2{
+          color: gray;
+          line-height: 32px;
+          font-size: 18px;
+          margin-left: 3vw;
+          color: black;
+          margin-top: 3vh;
+        }
+        #manage-text button{
+          padding: 16px 25px;
+          border: none;
+          margin-left: 3vw;
+          margin-top: 4vh;
+          box-shadow: 5px 5px 10px 0 rgb(0,200,175);
+          border-radius: 10px;
+          background-color: rgb(0,200,175);
+          color: white;
+          transition: 0.5s;
+          font-size: 16px;
+        }
+        #manage-text button:hover{
+          cursor: pointer;
+          background-color: black;
+        }
+        #manage-image{
+          width: 800px;
+          height: 500px;
+          /* background-color: darkkhaki; */
+        }
+        #manage-image-1{
+          width: 100%;
+        }
+        #manage-image-2{
+          width: 12%;
+          transition: 1s;
+          margin-top: 14vh;
+          margin-left: -12vw;
+          position: absolute;
+        }
+        #manage-image-3{
+          width: 6%;
+          transition: 1s;
+          margin-top: 50vh;
+          margin-left: -9vw;
+          position: absolute;
+        }
+
+
+
+
+        
+        
+
+
+        /* ------------------------------------Amplify------------------------------ */
+
+
+
+
+        #amplify{
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+          /* background-color: aquamarine; */
+        }
+        #amplify-text{
+          width: 500px;
+          height: 500px;
+          /* background-color: darkgreen; */
+        }
+        #amplify-text-para1{
+          font-size: 18px;
+          color: black;
+          margin-top: 5vh;
+          margin-left: 3vw;
+        }
+        #amplify-text-heading{
+          font-size: 32px;
+          margin-top: 3vh;
+          color: black;
+          margin-left: 3vw;
+          /* width: 22vw; */
+          font-weight: bold;
+        }
+        #amplify-text-para2{
+          color: gray;
+          line-height: 32px;
+          font-size: 18px;
+          margin-left: 3vw;
+          color: black;
+          margin-top: 3vh;
+        }
+        #amplify-text button{
+          padding: 16px 25px;
+          border: none;
+          margin-left: 3vw;
+          margin-top: 4vh;
+          box-shadow: 5px 5px 10px 0 rgb(0,200,175);
+          border-radius: 10px;
+          background-color: rgb(0,200,175);
+          color: white;
+          font-size: 16px;
+          transition: 0.5s;
+        }
+        #amplify-text button:hover{
+          cursor: pointer;
+          background-color: black;
+        }
+        #amplify-image{
+          width: 800px;
+          height: 500px;
+          /* background-color: darkkhaki; */
+        }
+        #amplify-image-1{
+          width: 100%;
+        }
+        #amplify-image-2{
+          width: 12%;
+          transition: 0.6s;
+          margin-top: 10vh;
+          margin-left: -15vw;
+          position: absolute;
+        }
+        #amplify-image-3{
+          width: 6%;
+          transition: 0.6s;
+          margin-top: 5vh;
+          margin-left: -10vw;
+          position: absolute;
+        }
+
+        
+
+        
+
+
+        /* ------------------------------------Service------------------------------ */
+
+
+
+
+        #service{
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+          /* background-color: aquamarine; */
+        }
+        #service-text{
+          width: 500px;
+          height: 500px;
+          /* background-color: darkgreen; */
+        }
+        #service-text-para1{
+          font-size: 18px;
+          color: black;
+          margin-top: 5vh;
+          margin-left: 3vw;
+        }
+        #service-text-heading{
+          font-size: 35px;
+          margin-top: 3vh;
+          color: black;
+          margin-left: 3vw;
+          /* width: 22vw; */
+          font-weight: bold;
+        }
+        #service-text-para2{
+          color: gray;
+          line-height: 32px;
+          font-size: 18px;
+          margin-left: 3vw;
+          color: black;
+          margin-top: 3vh;
+        }
+        #service-text button{
+          padding: 16px 25px;
+          border: none;
+          margin-left: 3vw;
+          margin-top: 4vh;
+          box-shadow: 5px 5px 10px 0 rgb(0,200,175);
+          border-radius: 10px;
+          background-color: rgb(0,200,175);
+          color: white;
+          transition: 0.5s;
+          font-size: 16px;
+        }
+        #service-text button:hover{
+          cursor: pointer;
+          background-color: black;
+        }
+        #service-image{
+          width: 800px;
+          height: 500px;
+          position: relative;
+          /* background-color: darkkhaki; */
+        }
+        #service-image-1{
+          width: 100%;
+        }
+        #service-image-2{
+          width: 100%;
+          transition: 1s;
+          margin-top: 0vh;
+          margin-left: -52vw;
+          position: absolute;
+        }
+        #service-image-3{
+          width: 6%;
+          transition: 1s;
+          margin-top: 21vh;
+          margin-left: -10.4vw;
+          position: absolute;
+          animation: arrow-move 2s linear infinite;
+        }
+        @keyframes arrow-move {
+          
+            0%{
+              margin-left: 0;
+            }
+            15%{
+              transform: skewY(0deg);
+            }
+            31%{
+              margin-left: -10.4vw;
+              /* transform: skewY(5deg); */
+            }
+            100%{
+              margin-left: -10.4vw;
+            }
+        }
+
+        #service-image-4{
+          width: 8%;
+          transition: 1s;
+          margin-top: 15vh;
+          margin-left: -12.5vw;
+          position: absolute;
+          animation: lines-move 2s linear infinite;
+        }
+        @keyframes lines-move {
+          0%{
+            opacity: 0;
+          }
+          30%{
+            opacity: 0;
+          }
+          40%{
+            opacity: 1;
+          }
+          60%{
+            opacity: 0;
+          }
+          70%{
+            opacity: 1;
+          }
+          80%{
+            opacity: 0;
+          }
+          100%{
+            opacity: 1;
+          }
+        }
+
+
+        /* ----------------------------------------Team----------------------------- */
+
+
+
+        #team{
+          width: 100%;
+          height: 130vh;
+          padding: 1px;
+          /* background-color: lightgreen; */
+        }
+        #team-text{
+          width: 50%;
+          height: 40vh;
+          margin: 10vh auto;
+          /* background-color: green; */
+        }
+        #team-text-heading{
+          font-size: 30px;
+          text-align: center;
+          color: rgb(39, 39, 39);
+        }
+        #team-text-para{
+          font-size: 20px;
+          text-align: center;
+          margin-top: 3vh;
+          line-height: 35px;
+          color: rgb(39, 39, 39);
+        }
+        #team-text button{
+          padding: 22px 35px;
+          background-color: rgb(0,200,175);
+          color: white;
+          font-size: 18px;
+          border: none;
+          border-radius: 10px;
+          margin-left: 15vw;
+          margin-top: 5vh;
+          box-shadow: 5px 5px 10px 0 rgb(0,200,175);
+        }
+        #team-text button:hover{
+          background-color: black;
+        }
+        #team-image{
+          width: 90%;
+          height: 60vh;
+          padding: 1px;
+          z-index: -111;
+          margin: 10vh auto;
+          /* background-col or: darkkhaki; */
+        }
+        #image-1{
+          width: 200px;
+          height: 300px;
+          margin-top: 20vh;
+          margin-left: 36vw;
+          position: absolute;
+          /* background-color: blueviolet; */
+        }
+        #image-1 img{
+          width: 100%; 
+        }
+        #image-2{
+          width: 300px;
+          height: 200px;
+          margin-top: 18vh;
+          margin-left: 8vw;
+          z-index: 1;
+          position: absolute;
+          /* background-color: blueviolet;  */
+        }
+        #image-2 img{
+          width: 100%; 
+          transition: 0.5s;
+        }
+        #image-3{
+          width: 220px;
+          height: 200px;
+          margin-top: 12vh;
+          margin-left: 70vw;
+          position: absolute;
+          z-index: 1;
+          /* background-color: blueviolet;  */
+        }
+        #image-3 img{
+          width: 100%; 
+          transition: 0.8s;
+        }
+        #image-4{
+          width: 140px;
+          height: 200px;
+          margin-top: 25vh;
+          margin-left: 50vw;
+          position: absolute;
+          /* background-color: blueviolet;  */
+        }
+        #image-4 img{
+          width: 100%;
+          transition: 1s;
+        }
+        #image-5{
+          width: 130px;
+          height: 200px;
+          margin-top: 10vh;
+          margin-left: 25vw;
+          position: absolute;
+          /* background-color: blueviolet;  */
+        }
+        #image-5 img{
+          width: 100%; 
+        }
+        #image-6{
+          width: 180px;
+          height: 200px;
+          margin-top: 25vh;
+          margin-left: 57vw;
+          position: absolute;
+          /* background-color: blueviolet;  */
+        }
+        #image-6 img{
+          width: 100%; 
+        }
+        #image-7{
+          width: 120px;
+          height: 150px;
+          margin-top: 5vh;
+          position: absolute;
+          /* background-color: blueviolet;  */
+        }
+        #image-7 img{
+          width: 100%; 
+        }
+        #image-8{
+          width: 250px;
+          height: 150px;
+          margin-top: 5vh;
+          margin-left: 18vw;
+          position: absolute;
+          /* background-color: blueviolet;  */
+        }
+        #image-8 img{
+          width: 100%; 
+        }
+        #image-9{
+          width: 250px;
+          height: 150px;
+          margin-top: 44vh;
+          margin-left: 18vw;
+          position: absolute;
+          /* background-color: blueviolet;  */
+        }
+        #image-9 img{
+          width: 100%; 
+        }
+        #image-10{
+          width: 80px;
+          height: 150px;
+          margin-top: 13vh;
+          margin-left: 50vw;
+          position: absolute;
+          /* background-color: blueviolet;  */
+        }
+        #image-10 img{
+          width: 100%; 
+        }
+        #image-11{
+          width: 80px;
+          height: 150px;
+          margin-top: 45vh;
+          margin-left: 65vw;
+          position: absolute;
+          /* background-color: blueviolet;  */
+        }
+        #image-11 img{
+          width: 100%; 
+        }
+        #image-12{
+          width: 180px;
+          height: 150px;
+          margin-top: 12vh;
+          margin-left: 78vw;
+          position: absolute;
+          /* background-color: blueviolet;  */
+        }
+        #image-12 img{
+          width: 100%; 
+        }
+        #image-13{
+          width: 600px;
+          height: 150px;
+          margin-top: 3vh;
+          margin-left: 35vw;
+          position: absolute;
+          /* background-color: blueviolet;  */
+        }
+        #image-13 img{
+          width: 100%; 
+        }
+        
+        /* -----------------------------------Studies--------------------------- */
+
+
+        #studies-main{
+          width: 100vw;
+          height: 150vh;
+          padding: 1px;
+          /* background-color: lightgrey; */
+        }
+        #studies-text{
+          width: 95%;
+          height: 25vh;
+          padding: 1px;
+          margin: 10vh auto;
+          /* background-color: lightsalmon; */
+        }
+        #studies-text-heading{
+          width: 40vw;
+          height: 5vh;
+          font-weight: bold;
+          font-size: 30px;
+          margin-left: 8vw;
+          margin-top: 5vh;
+          /* background-color: magenta; */
+        }
+        #studies-text-para{
+          width: 40vw;
+          height: 5vh;
+          line-height: 35px;
+          font-size: 20px;
+          margin-left: 8vw;
+          margin-top: 5vh;
+          /* background-color: magenta; */
+        }
+        #studies-text-btn{
+          width: 20vw;
+          height: 5vh;
+          margin-left: 70vw;
+          margin-top: -12vh;
+          /* background-color: darkmagenta; */
+        }
+        #studies-text-btn button{
+          padding: 20px 30px;
+          font-size: 15px;
+          color: white;
+          border: none;
+          background-color: rgb(0,200,175);
+          border-radius: 10px;
+          transition: 0.6s;
+          box-shadow: 5px 5px 10px 0 rgb(0,200,175);
+        }
+        #studies-text-btn button:hover{
+          background-color: black;
+          cursor: pointer;
+        }
+        #studies{
+          width: 90%;
+          height: auto;
+          margin: auto;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+          align-items: center;
+          /* background-color: royalblue; */
+        }
+        #studies-a{
+          width: 350px; 
+          height: 600px;
+          border: 1px solid black;
+          border-radius: 10px;
+          box-shadow: 12px 12px 30px 0 rgb(197, 196, 196);
+          /* background-color: seagreen; */
+        }
+        #studies-image{
+          width: 45%;
+          height: 12vh;
+          margin: 3vh auto;
+          /* background-color: blueviolet; */
+        }
+        #studies-image img{
+          width: 100%;
+        }
+        #studies-para{
+          text-align: center; 
+          width: 90%;
+          height: 12vh;
+          line-height: 30px;
+          font-size: 17px;
+          margin: auto;
+          /* background-color: blueviolet; */
+        }
+        #studies-table{ 
+          width: 90%;
+          height: 28vh;
+          display: flex;
+          flex-wrap: wrap;
+          margin: 2vh auto;
+          border-top: 1px solid silver;
+          border-bottom: 1px solid silver;
+          /* background-color: blueviolet; */
+        }
+        #studies-table-1{
+          width: 49%;
+          height: 70%;
+          border-right: 1px solid silver;
+          border-bottom: 1px solid silver;
+          /* background-color: slateblue; */
+        }
+        #studies-table-1 img{
+          width: 50%;
+          margin: 2vh 2vw;
+        }
+        #studies-table-1 p{
+          margin: -2vh 2vw;
+          font-size: 30px;
+          font-weight: bold;
+        }
+        #studies-table-2 img{
+          width: 60%;
+          margin: 2vh 2vw;
+        }
+        #studies-table-2 p{
+          margin: -4.5vh 3.5vw;
+          font-size: 30px;
+          font-weight: bold;
+        }
+        #studies-table-2{
+          width: 49%;
+          height: 70%;
+          /* border-left: 1px solid silver; */
+          border-bottom: 1px solid silver;
+          /* background-color: blue; */
+        }
+        #studies-table-3{
+          width: 49%;
+          height: 20%;
+          padding: 20px 0 0 0;
+          text-align: center;
+          font-size: 18px;
+          /* border-top: 1px solid silver; */
+          border-right: 1px solid silver;
+          /* background-color: lightsalmon; */
+        }
+        #studies-table-4{
+          width: 49%;
+          height: 20%;
+          font-size: 16px;
+          padding: 20px 0 0 0;
+          text-align: center;
+          /* border-top: 1px solid silver; */
+          /* border-left: 1px solid silver; */
+          /* background-color: lightseagreen; */
+        }
+
+
+        #studies button{
+          padding: 15px 25px;
+          background-color: rgb(0,200,175);
+          color: white;
+          border: none;
+          border-radius: 10px;
+          font-size: 18px;
+          margin-left: 25%;
+          margin-top: 4vh;
+          transition: 0.5s;
+          box-shadow: 5px 5px 10px 0 rgb(0,200,175);
+        }
+        #studies button:hover{
+          cursor: pointer;
+          background-color: black;
+        }
+
+
+
+        /* ----------------------------------Form----------------------------------- */
+
+
+
+        #form-main{
+          width: 90vw;
+          height: 170vh;
+          margin: auto;
+          background-color: rgb(231,254,248);
+        }
+        #form-image{
+          width: 40vw;
+          height: 45vh;
+          margin: auto;
+          /* background-color: lightgreen; */
+        }
+        #form-image img{
+          width: 100%;
+          /* position: relative; */
+          height: 100%;
+        }
+        
+        #form-search-main{
+          width: 15vw;
+          height: 4vh;
+          position: absolute;
+          border-radius: 30px;
+          overflow: hidden;
+          margin-left: 5vw;
+          margin-top: -29vh;
+          border: 2px solid black;
+          background-color: rgb(117,223,252);
+        }
+        #form-search-main hr{
+          width: 10vw;
+          height: 0.1vh;
+          margin-top: -2.1vh;
+          margin-left: 5vw;
+          background-color: black;
+        }
+        #form-search{
+          width: 9vw;
+          height: 4vh;
+          position: relative;
+          border-radius: 30px;
+          /* background-color: blue; */
+        }
+        #form-search-dots{
+          width: 15vw;
+          height: 4vh;
+          margin-top: -2vh;
+          margin-left: 1vw;
+          border-radius: 30px;
+          animation: form-search-dots-move 10s linear infinite;
+          /* background-color: blue; */
+        }
+        #form-search-dots img{
+          width: 100%;
+        }
+        @keyframes form-search-dots-move {
+
+            0%{margin-left: 1vw;}
+            100%{margin-left: 12vw;}
+
+          }
+        #form-search img{
+          margin-top: -0.4vh;
+          height: 135%;
+          width: 100%;
+        }
+        #form-massage{
+          width: 180px;
+          height: 50px;
+          margin-top: -8vh;
+          margin-left: 0%;
+          /* background-color: indigo; */
+          position: absolute;
+        }
+        #form-massage img{
+          animation: form-message-move 3s linear infinite;
+          width: 100%;
+        }
+        @keyframes form-message-move {
+
+              0%{margin-top: 0px;}
+              50%{margin-top: 10px;}
+              100%{margin-top: 0px;}
+
+        }
+
+        #form-massage-2{
+          width: 180px;
+          height: 50px;
+          margin-top: -46vh;
+          margin-left: 15%;
+          /* background-color: indigo; */
+          position: absolute;
+        }
+        #form-massage-2 img{
+          animation: form-message-2-move 3s linear infinite;
+          width: 100%;
+        }
+        @keyframes form-message-2-move {
+
+              0%{margin-top: 0px;}
+              50%{margin-top: 10px;}
+              100%{margin-top: 0px;}
+
+        }
+
+        #form-massage-3{
+          width: 180px;
+          height: 50px;
+          margin-top: -32vh;
+          margin-left: 27%;
+          /* background-color: indigo; */
+          position: absolute;
+        }
+        #form-massage-3 img{
+          animation: form-message-3-move 3s linear infinite;
+          width: 100%;
+        }
+        @keyframes form-message-3-move {
+
+              0%{margin-top: 0px;}
+              50%{margin-top: 10px;}
+              100%{margin-top: 0px;}
+
+        }
+
+        #form-opacity-dots{
+          width: 100px;
+          height: 80px;
+          margin-left: 16vw;
+          margin-top: -40vh;
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          /* background-color: brown; */
+        }
+        #form-opacity-dots-1{
+          width: 90%;
+          height: 18px;
+          display: flex;
+          flex-direction: row;
+          /* background-color: cadetblue; */
+        }
+        #form-opacity-dots-1-a{
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          animation: form-dot-1-a 5s linear infinite;  
+          border: 1px solid black;
+        }
+        @keyframes form-dot-1-a {
+            0%{opacity: 0;}
+            20%{opacity: 1;}
+            80%{opacity: 1;}
+            100%{opacity: 0;}
+        }
+        #form-opacity-dots-1-b{
+          width: 10px;
+          height: 10px;
+          animation: form-dot-1-b 5s linear infinite;  
+          border-radius: 50%;
+          background-color: rgb(0,200,175);
+        }
+        @keyframes form-dot-1-b {
+            0%{opacity: 1;}
+            30%{opacity: 0;}
+            40%{opacity: 0;}
+            90%{opacity: 1;}
+            100%{opacity: 0;}
+        }
+        #form-opacity-dots-1-c{
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          background-color: orange;
+        }
+
+        #form-opacity-dots-1-d{
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          border: 1px solid black;
+          animation: dot-1-a 6s linear infinite;  
+          /* background-color: rgb(0,200,175); */
+        }
+        #form-opacity-dots-1-e{
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          background-color: rgb(0,200,175);
+        }
+        #form-opacity-dots-1-f{
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          border: 1px solid black;
+          /* background-color: orange; */
+        }
+
+        #form-opacity-dots-1-g{
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          animation: form-dot-1-g 4s linear infinite;
+          /* border: 1px solid black; */
+          background-color : purple;
+        }
+        @keyframes form-dot-1-g {
+          
+            0%{opacity: 1;}
+            50%{opacity: 1;}
+            60%{opacity: 0;}
+            100%{opacity: 1;}
+
+        }
+        #form-opacity-dots-1-h{
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          border: 1px solid black;
+          /* background-color: rgb(0,200,175); */
+        }
+        #form-opacity-dots-1-i{
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          animation: form-dot-1-i 5s linear infinite;  
+          border: 1px solid black;
+          /* background-color: orange; */
+        }
+        @keyframes form-dot-1-i {
+            0%{opacity: 1;}
+            20%{opacity: 0;}
+            40%{opacity: 1;}
+            80%{opacity: 1;}
+            100%{opacity: 0;}
+        }
+        #form-opacity-dots-1-j {
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          /* border: 1px solid black; */
+          background-color: rgb(0,200,175);
+        }
+        #form-2-opacity-dots{
+          width: 100px;
+          height: 80px;
+          margin-left: -1vw;
+          margin-top: -45vh;
+          position: absolute;
+          display: flex;
+          transform: rotateY(180deg);
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          /* background-color: brown; */
+        }
+
+        #form-wave-parent{
+          width: 14vw;
+          height: 33vh;
+          margin-left: 6vw;
+          margin-top: -40vh;
+          position: absolute;
+          overflow: hidden;
+          border-radius: 50%;
+          /* background-color: aqua; */
+        }
+        #form-wave{
+          /* width: 30vw; */
+          /* height: 10vh; */
+          /* margin-left: 60vw; */
+          margin-top: 18vh;
+          /* position: absolute; */
+          display: flex;
+          animation: form-wave-move 10s linear infinite;
+          /* background-color: indigo; */
+        }
+        @keyframes form-wave-move {
+          
+            0%{margin-left: 0px;}
+            100%{margin-left: -253px;}
+
+        }
+        #form-wave #form-wave-image1{
+          width: 15vw;          
+          height: 6vh;
+        }
+        #form-wave #form-wave-image2{
+          width: 15vw;          
+          height: 6vh;
+          margin-left: -0.6vw;
+        }
+
+
+
+
+
+        #form-text{
+          width: 30vw;
+          height: 30vh;
+          margin: auto;
+          padding: 1px;
+          /* background-color: green; */
+        }
+        #form-text-heading{
+          font-size: 30px;
+          text-align: center;
+          font-weight: bold;
+          margin-top: 3vh;
+        }
+        #form-text-para{
+          font-size: 18px;
+          margin-top: 2vh;
+          line-height: 30px;
+          text-align: center;
+        }
+        #form-text-para span{
+          color: rgb(0,200,175);
+          cursor: pointer;
+          transition: 0.5s;
+        }
+        #form-text-para span:hover{
+          color: black;
+        }
+        #form{
+          width: 55vw;
+          height: 80vh;
+          margin: auto;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          /* background-color: lightseagreen; */
+        }
+        #text1{
+          width: 400px;
+          height: 50px;
+          font-size: 15px;
+          color: gray;
+          border: 1px solid black;
+          border-radius: 10px;
+          box-shadow: 5px 5px 5px 0 rgb(0,200,175);
+        }
+        #form textarea{
+          width: 900px;
+          height: 100px;
+          border: 1px solid black;
+          border-radius: 10px;
+          box-shadow: 5px 5px 5px 0 rgb(0,200,175);
+        }
+        #form button{
+          padding: 15px 70px;
+          font-size: 18px;
+          margin-left: 20vw;
+          border: none;
+          border-radius: 10px;
+          background-color: rgb(0,200,175);
+          color: white;
+          transition: 0.5s;
+          box-shadow: 5px 5px 10px 0 rgb(0,200,175);  
+        }
+        #form button:hover{
+          background-color: black;
+          cursor: pointer;
+        }
+        #poster{
+          width: 200px;
+          height: 300px;
+          margin-left: 75vw;
+          margin-top: -40vh;
+          position: absolute;
+          /* background-color: darkgreen; */
+        }
+        #poster-image1{
+          width: 100%;
+          position: absolute;
+        }
+        #poster-image2{
+          height: 22vh;
+          z-index: 10;
+          margin-left: 0.6vw;
+          margin-top: 18vh;
+          position: absolute;
+          width: 90%;
+        }
+        #footer-main{
+          width: 100vw;
+          height: 100vh;
+          padding: 1px;
+          /* background-color: darkorange; */
+        }
+        #footer-text{
+          width: 30%;
+          height: 35vh;
+          padding: 1px;
+          margin: 5vh auto;
+          /* background-color: darkslateblue; */
+        }
+        #footer-text-image{
+          width: 200px;
+          height: 50px;
+          margin: 2vh auto;
+          /* background-color: darkmagenta; */
+        }
+        #footer-text-heading{
+          font-size: 20px;
+          line-height: 35px;
+          text-align: center;
+        }
+        #footer-text-icons{
+          width: 320px;
+          height: 70px;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          margin: 2vh auto;
+          /* background-color: darkgreen; */
+        }
+        #footer-text-icon-1{
+          width: 60px;
+          height: 60px;
+          border-radius: 10px;
+          box-shadow: 5px 5px 0 0 rgb(0,200,175);
+          border: 1px solid black;
+          transition: 0.6s;
+          background-color: white;
+        }
+        #footer-text-icon-1 i{
+          font-size: 25px;
+          margin-left: 1.2vw;
+          margin-top: 2.5vh;
+          color: rgb(0,200,175);
+        }
+        #footer-text-icon-1:hover{
+          background-color: black;
+        }
+
+
+
+        #footer{
+          width: 90%;
+          height: 30vh;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+          align-items: center;
+          margin: 5vh auto;
+          /* background-color: blue; */
+        }
+        #footer-1{
+          width: 200px;
+          height: 250px;
+          /* background-color: lightblue; */
+          line-height: 35px;
+        }
+        #footer-1 span{
+          font-size: 16px;
+          font-weight: bold;
+          color: rgb(32, 32, 32);
+        }
+        #footer-1 p{
+          font-size: 15px;
+          transition: 0.5s;
+          color: rgb(32, 32, 32);
+        }
+        #footer-1 p:hover{
+          color: rgb(0,200,175);
+          cursor: pointer;
+        }
+
+        #footer-copyright{
+          width: 100%;
+          height: 15vh;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 0vh auto;
+          /* background-color: darkkhaki; */
+        }
+        #footer-copyright p{
+          text-align: center;
+          width: 450px;
+        }
+        #footer-copyright p span{
+          font-size: 15px;
+          transition: 0.5s;
+        }
+        #footer-copyright p span:hover{
+          color: rgb(0,200,175);
+          cursor: pointer;
+        }
+        #footer-push{
+          width: 130px;
+          height: 130px;
+          left: 10vw;
+          margin-top: 10vh;
+          position: absolute;
+          /* background-color: darkgreen;   */
+        }
+        #footer-push img{
+          width: 100%;
+        }
+
+
+
+
+
+
+
+
+
+  </style>
+
+
+
+</head>
+<body>
+  <script>
+    AOS.init();
+  </script>
+
+
+
+      <div id="navbar">
+          <div id="logo"><a href="./index.html"><img src="./NeoReach-Images/logo.svg" alt=""></a></div>
+          <div id="nav">
+            <ul>
+              <li><a href="./solutions-neoreach.html">Solutions</a>
+                <div id="li-1-hide-image">
+                  <img src="./NeoReach-Images/underline@2x.png" alt="">
+                </div>
+                <div id="li-1-hide">
+                  <div id="li-1-hide-left">
+                    <div id="hide-left-1">
+                      <div id="hide-left-1-image">
+                        <img src="./NeoReach-Images/menuicon-services.svg" alt=""></div>
+                      <div id="hide-left-1-heading">Managed Services</div>
+                      <div id="hide-left-1-para">
+                        Full service influencer marketing campaigns.</div>
+                    </div>
+
+                    <div id="hide-left-1">
+                      <div id="hide-left-1-image">
+                        <img src="./NeoReach-Images/menuicon-software.svg" alt=""></div>
+                      <div id="hide-left-1-heading">Software</div>
+                      <div id="hide-left-1-para">
+                        Seamlessly search, manage, and track influencer campaigns.</div>
+                    </div>
+
+                    <div id="hide-left-1">
+                      <div id="hide-left-1-image">
+                        <img src="./NeoReach-Images/menuicon-paid.svg" alt=""></div>
+                      <div id="hide-left-1-heading">Paid Media</div>
+                      <div id="hide-left-1-para">
+                        Develop and execute influencer driven performance marketing campaigns.</div>
+                    </div>
+
+                  </div>
+                  <div id="li-1-hide-right">
+                    <div id="hide-right-1">
+                      <div id="hide-right-1-image">
+                        <img src="./NeoReach-Images/menuicon-fraud.svg" alt=""></div>
+                      <div id="hide-right-1-heading">Froud Detection</div>
+                      <div id="hide-right-1-para">
+                        Seamlessly search, manage, and track influencer campaigns.</div>
+                    </div>
+
+                    <div id="hide-right-1">
+                      <div id="hide-right-1-image">
+                        <img src="./NeoReach-Images/menuicon-api.svg" alt=""></div>
+                      <div id="hide-right-1-heading">API</div>
+                      <div id="hide-right-1-para">
+                        Develop and execute influencer driven performance marketing campaigns.</div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li><a href="./Service-NeoReach.html">Services</a>
+                <div id="li-1-hide-image">
+                  <img src="./NeoReach-Images/underline@2x.png" alt="">
+                </div></li>
+              <li><a href="./case-studies.html">Case Studies</a>
+                <div id="li-1-hide-image">
+                  <img src="./NeoReach-Images/underline@2x.png" alt="">
+                </div></li>
+              <li><a href="">Pricing</a>
+                <div id="li-1-hide-image">
+                  <img src="./NeoReach-Images/underline@2x.png" alt="">
+                </div></li>
+              <li><a href="">Resources</a>
+                <div id="li-1-hide-image">
+                  <img src="./NeoReach-Images/underline@2x.png" alt="">
+                </div>
+                <div id="li-2-hide">
+                    <div id="li-2-hide-left">
+                      <div id="li-2-hide-left-1">
+                        <h3>Blog</h3><br>
+                        <p>Stay updated with the latest influencer marketing trends, tips, and topics.</p>
+                      </div>
+                      <div id="li-2-hide-left-2">
+                        <h3>Top Lists</h3><br>
+                        <p>Discover the most definitive list of influencers across a range of categories.</p>
+                      </div>
+                    </div>
+                    <div id="li-2-hide-right">
+                      <div id="li-2-hide-left-1">
+                        <h3>Top Spenders</h3><br>
+                        <p>See the top brand spenders in influencer marketing this week.</p>
+                      </div>
+                      <div id="li-2-hide-left-2">
+                        <h3>Industry Reports</h3><br>
+                        <p>Explore leading influencer marketing industry reports.</p>
+                      </div>
+                    </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="login">
+            <h3>Login</h3>
+            &nbsp;&nbsp;&nbsp;
+            <button>GET STARTED</button>
+          </div>
+      </div>
+
+      <div id="home-main">
+
+
+        <div id="home-content">
+          <div id="home-content-heading">Run World Class Influencer Marketing Campaigns.</div>
+          <div id="home-content-para">
+            NeoReach creates world class original
+            influencer campaigns for leading brands
+            and Global Fortune 500s.    
+          </div>
+          <button>LEARN MORE</button>
+        </div>
+        <div id="home-content">
+          <img src="NeoReach-Images/hero-base1@2x.png" alt="">
+        </div>
+        <div id="home-content">
+          <img src="./NeoReach-Images/hero-base2@2x.png" alt="">
+        </div>
+
+        <div id="cards-move-main">
+        <div id="cards-move">
+            <div id="card-move-1"><img src="./NeoReach-Images/card-boy@2x.png" alt=""></div>
+            <div id="card-move-1"><img src="./NeoReach-Images/card-girl@2x.png" alt=""></div>
+            <div id="card-move-1"><img src="./NeoReach-Images/card-boy@2x.png" alt=""></div>
+            <div id="card-move-1"><img src="./NeoReach-Images/card-girl@2x.png" alt=""></div>
+            <div id="card-move-1"><img src="./NeoReach-Images/card-boy@2x.png" alt=""></div>
+            <div id="card-move-1"><img src="./NeoReach-Images/card-boy@2x.png" alt=""></div>
+            <div id="card-move-1"><img src="./NeoReach-Images/card-boy@2x.png" alt=""></div>
+            <div id="card-move-1"><img src="./NeoReach-Images/card-boy@2x.png" alt=""></div>
+            <div id="card-move-1"><img src="./NeoReach-Images/card-boy@2x.png" alt=""></div>
+            <div id="card-move-1"><img src="./NeoReach-Images/card-boy@2x.png" alt=""></div>
+        </div>
+      </div>              
+      <div id="massage">
+        <img src="./NeoReach-Images/talk-bubble@2x.png" alt="">
+      </div>
+      <div id="massage-2">
+        <img src="./NeoReach-Images/talk-bubble@2x.png" alt="">
+      </div>
+      <div id="horn">
+        <img id="image2" src="./NeoReach-Images/horn-lines.svg" alt="">
+        <img id="image1" src="./NeoReach-Images/bullhorn@2x.png" alt="">
+      </div>
+      <div id="wave-parent">
+      <div id="wave">
+        <img id="wave-image1" src="./NeoReach-Images/graph-wave@2x.png" alt="">
+        <img id="wave-image2" src="./NeoReach-Images/graph-wave@2x.png" alt="">
+      </div>
+    </div>
+    <div id="search-main">
+      <div id="search"><img src="./NeoReach-Images/search-bar@2x.png" alt=""></div>
+      <hr>
+      <div id="search-dots"><img src="./NeoReach-Images/search-dots.svg" alt=""></div>
+    </div>
+    <div id="graph-line">
+      <img src="./NeoReach-Images/graph-up.svg" alt="">
+    </div>
+      <div id="circle-orange">
+        <img src="./NeoReach-Images/circle-orange@2x.png" alt="">
+      </div>
+      <div id="circle-pink">
+        <img src="./NeoReach-Images/circle-pink@2x.png" alt="">
+      </div>
+      <div id="opacity-dots">
+        <div id="opacity-dots-1">
+          <div id="opacity-dots-1-a"></div>
+        </div>
+        <div id="opacity-dots-1">
+          <div id="opacity-dots-1-b"></div>
+          <div id="opacity-dots-1-c"></div>
+        </div>
+        <div id="opacity-dots-1">
+          <div id="opacity-dots-1-d"></div>
+          <div id="opacity-dots-1-e"></div>
+          <div id="opacity-dots-1-f"></div>
+        </div>
+        <div id="opacity-dots-1">
+          <div id="opacity-dots-1-g"></div>
+          <div id="opacity-dots-1-h"></div>
+          <div id="opacity-dots-1-i"></div>
+          <div id="opacity-dots-1-j"></div>
+        </div>
+      </div>
+
+
+
+      </div>
+
+      <div id="agency">
+
+        <div id="agency-brand">
+          <div id="agency-brand-image1">
+          <img src="./NeoReach-Images/logo-airbnb@2x.png" alt="">
+          </div>
+          <div id="agency-brand-image1">
+              <img src="./NeoReach-Images/logo-amazon@2x.png" alt="">
+          </div>
+          <div id="agency-brand-image1">
+            <img src="./NeoReach-Images/logo-nyt@2x.png" alt="">
+          </div>
+          <div id="agency-brand-image1">
+            <img src="./NeoReach-Images/logo-honda@2x.png" alt="">
+          </div>
+          <div id="agency-brand-image1">
+            <img src="./NeoReach-Images/logo-walmart@2x.png" alt="">
+          </div>
+          <div id="agency-brand-image1">
+            <img src="./NeoReach-Images/logo-bet@2x.png" alt="">
+          </div>
+          
+          
+        </div>
+        <div id="agency-circle">
+          <img src="./NeoReach-Images/ornament1@2x.png" alt="">
+        </div>
+        <div id="agency-text">
+          <div id="agency-text-heading">Leading Global Influencer Agency</div>
+          <div id="agency-text-para">
+            Our team integrates with yours to ensure proactive, real-time communication, while creating authentic, data-driven campaigns that get to the heart and soul of your brand story.
+          </div>
+          <button>LEARN MORE</button>
+        </div>
+        <div id="agency-image">
+          <img src="./NeoReach-Images/services-hero-base@2x.png?autoplay=1" alt="">
+          <iframe width="720" height="345" src="https://www.youtube.com/embed/8e4pAXy1iZI" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+        </div>
+      </div>
+      
+      <div id="access">
+        <div id="access-text">
+          <div id="access-text-para1">ACCESS</div>
+          <div id="access-text-heading">Connected Network Of Influencers</div>
+          <div id="access-text-para2">
+            Years of executing campaigns have helped us shape strong direct relationships with influencers, bloggers, and other creators. Coupled with our data-backed insights into key demographics and KPI’s, we not only ensure the perfect fit - but the perfect relationship.
+          </div>
+          <button>LEARN MORE</button>
+        </div>
+        <div id="access-image">
+          <img id="access-image-1" src="./NeoReach-Images/work-illus1@2x.png" alt="">
+          <img id="access-image-2" data-aos="fade-up-left" src="./NeoReach-Images/work1-photo1@2x.png" alt="">
+          <img id="access-image-3" data-aos="fade-up-right"data-aos="fade-up"
+          data-aos-anchor-placement="top-center" src="./NeoReach-Images/work1-photo2@2x.png" alt="">
+        </div>
+      </div>
+  
+      <div id="create">
+        <div id="create-image">
+          <img id="create-image-1" src="./NeoReach-Images/work-illus2@2x.png" alt="">
+          <img id="create-image-2" data-aos="fade-up-left" src="./NeoReach-Images/work2-photo1@2x.png" alt="">
+          <img id="create-image-3" src="./NeoReach-Images/work2-bubble@2x.png"   alt="">
+        </div>
+        <div id="create-text">
+          <div id="create-text-para1">CREATE</div>
+          <div id="create-text-heading">Creative Strategy & Direction</div>
+          <div id="create-text-para2">
+            We infuse your brand’s core messaging into everything we produce by working alongside the talent to create authentic, story-driven content that lives beyond the campaign. We create key strategy points, geared toward distribution and promotion, optimized for brand recognition and conversion.
+          </div>
+          <button>LEARN MORE</button>
+        </div>
+      </div>
+
+      <div id="manage">
+        <div id="manage-text">
+          <div id="manage-text-para1">MANAGE</div>
+          <div id="manage-text-heading">Contracting & Activation</div>
+          <div id="manage-text-para2">
+            Talent acquisition and management are key to a successful campaign. We manage the entire contracting and negotiating process - including pricing strategy, legal contracts, compliance, and everything in between. From campaign deliverables to final payment, we’ve got it covered.
+          </div>
+          <button>LEARN MORE</button>
+        </div>
+        <div id="manage-image">
+          <img id="manage-image-1" src="./NeoReach-Images/work-illus3@2x.png" alt="">
+          <img id="manage-image-2" data-aos="fade-up-right"data-aos="fade-up"
+          data-aos-anchor-placement="top-center" src="./NeoReach-Images/work3-photo1@2x.png" alt="">
+          <img id="manage-image-3" src="./NeoReach-Images/work3-shape.svg" alt="">
+        </div>
+      </div>
+
+      <div id="amplify">
+        <div id="amplify-image">
+          <img id="amplify-image-1" src="./NeoReach-Images/work-illus4@2x.png" alt="">
+          <img id="amplify-image-2" data-aos="fade-up-right" src="./NeoReach-Images/work4-photo1@2x.png" alt="">
+          <img id="amplify-image-3" src="./NeoReach-Images/work4-mag.svg" alt="">
+        </div>
+        <div id="amplify-text">
+          <div id="amplify-text-para1">AMPLIFY</div>
+          <div id="amplify-text-heading">Paid Media</div>
+          <div id="amplify-text-para2">
+            Syndicate influencer content with an experienced approach to user acquisition and paid media. Our team will define ad auctions, budget allocations, offers, copy, creative and more, all on the basis of ROI-across all major ad auctions and channels including Facebook®, Instagram®, Google®, TikTok®, Snapchat® and more.
+          </div>
+          <button>LEARN MORE</button>
+        </div>
+      </div>
+
+      <div id="service">
+        <div id="service-text">
+          <div id="service-text-para1">INTEGRATE</div>
+          <div id="service-text-heading">Self-Service <br> Software & APIs</div>
+          <div id="service-text-para2">
+            Our best-in-class self-service software and APIs allow for seamless Influencer campaign search, management, and tracking backed by analytics. Access a dedicated dashboard or integrate over 400+ custom data points into in-house tools and technologies.
+          </div>
+          <button>LEARN MORE</button>
+        </div>
+        <div id="service-image">
+          <img id="service-image-1" src="./NeoReach-Images/pricing-brands-bot@2x.png" alt="">
+          <img id="service-image-2" src="./NeoReach-Images/pricing-brands-top@2x.png" alt="">
+          <img id="service-image-3" src="./NeoReach-Images/pricing-brands-arrow.svg" alt="">
+          <img id="service-image-4" src="./NeoReach-Images/pricing-brands-lines.svg" alt="">
+        </div>
+      </div>
+
+      <div id="team">
+        <div id="team-text">
+          <div id="team-text-heading">Everything your team needs in one package.</div>
+          <div id="team-text-para">
+            Whether you are looking for a YouTube superstar or an Instagram micro-influencer, you’re in good company. Sign up today and see why NeoReach has managed over $250 million worth of influencer marketing campaigns to date.
+          </div>
+          <button>GET STARTED TODAY</button>
+        </div>
+        <div id="team-image">
+          <div id="image-1">  
+            <img src="./NeoReach-Images/package-photo2@2x.png" data-aos="fade-up-right" alt=""></div>
+          <div id="image-2">
+            <img src="./NeoReach-Images/package-photo1@2x.png"  data-aos="fade-up-left" alt=""></div>
+          <div id="image-3">
+            <img src="./NeoReach-Images/package-photo3@2x.png"  data-aos="fade-up-right" alt=""></div>
+          <div id="image-4">
+            <img src="./NeoReach-Images/package-sm-photo2@2x.png"  data-aos="fade-up-right" alt=""></div>
+          <div id="image-5">
+            <img src="./NeoReach-Images/package-sm-photo1@2x.png"  data-aos="fade-up-left" alt=""></div>
+          <div id="image-6">
+            <img src="./NeoReach-Images/package-sm-photo3@2x.png"  data-aos="fade-up-right" alt=""></div>
+          <div id="image-7">
+            <img src="./NeoReach-Images/circle-mixed@2x.png"  alt="">
+          </div>
+          <div id="image-8">
+            <img src="./NeoReach-Images/package-boxes@2x.png" alt="">
+          </div>
+          <div id="image-9">
+            <img src="./NeoReach-Images/package-horn1@2x.png" alt="">
+          </div>
+          <div id="image-10">
+            <img src="./NeoReach-Images/package-horn2@2x.png" alt="">
+          </div>
+          <div id="image-11">
+            <img src="./NeoReach-Images/package-paper@2x.png" alt="">
+          </div>
+          <div id="image-12">
+            <img src="./NeoReach-Images/circle-orange@2x.png" alt="">
+          </div>
+          <div id="image-13">
+            <img src="./NeoReach-Images/package-bgdots.svg" alt="">
+          </div>
+          
+          
+
+        </div>
+      </div>
+
+
+      <div id="studies-main"> 
+        <div id="studies-text">
+          <div id="studies-text-heading">See what our clients are saying.</div>
+          <div id="studies-text-para">
+            See how top brands are successfully using NeoReach to activate, manage, and track influencer marketing campaigns at scale.
+          </div>
+          <div id="studies-text-btn">
+            <button>SEE ALL CASE STUDIES</button>
+          </div>
+        </div>
+        <div id="studies">
+          <div id="studies-a">
+            <div id="studies-image">
+              <img src="./NeoReach-Images/Macys-Logo-black-e1619447007844.png" alt="">
+            </div>
+            <div id="studies-para">
+              NeoReach launched Market by Macy’s, <br> a new location and store chain with <br> influencer marketing.
+            </div>
+            <div id="studies-table">
+              <div id="studies-table-1">
+                <img src="./NeoReach-Images/cs-icon-graph.svg" alt=""><br>
+                <p>1.57X</p>
+              </div>
+              <div id="studies-table-2">
+                <img src="./NeoReach-Images/cs-icon-talk.svg" alt="">
+                <p>2K+</p>
+              </div>
+              <div id="studies-table-3">ROI</div>
+              <div id="studies-table-4">Fan Engagements</div>
+            </div>
+            <button>LEARN MORE</button>
+          </div>
+
+          <div id="studies-a">
+              <div id="studies-image">
+                  <img src="./NeoReach-Images/IMC-toys-logo-influencer-marketing-campaign-e1619711722841.jpeg" alt="">
+              </div>
+              <div id="studies-para">
+                How NeoReach achieved over 2.5 <br> Million impressions for IMC Toys with its <br> targeted influencer campaign
+              </div>
+              <div id="studies-table">
+                <div id="studies-table-1">
+                  <img src="./NeoReach-Images/cs-icon-views.svg" alt=""><br>
+                  <p>2.5M+</p>
+                </div>
+                <div id="studies-table-2">
+                  <img src="./NeoReach-Images/cs-icon-cost.svg" alt="">
+                  <p>1.6X</p>
+                </div>
+                <div id="studies-table-3">Impressions</div>
+                <div id="studies-table-4">ROI</div>
+              </div>
+              <button>LEARN MORE</button>
+            </div>
+
+          <div id="studies-a">
+              <div id="studies-image">
+                <img src="./NeoReach-Images/nvidia-black-e1625687232142.png" alt="">
+              </div>
+              <div id="studies-para">
+                NeoReach knew exactly what to do to <br> activate NVIDIA's goal and secure <br> 48.3M impressions.
+              </div>
+              <div id="studies-table">
+                <div id="studies-table-1">
+                  <img src="./NeoReach-Images/cs-icon-influencers.svg" alt=""><br>
+                  <p>13.4M</p>
+                </div>
+                <div id="studies-table-2">
+                  <img src="./NeoReach-Images/cs-icon-views.svg" alt="">
+                  <p>48.3M</p>
+                </div>
+                <div id="studies-table-3">Total Reach</div>
+                <div id="studies-table-4">Impressions</div>
+              </div>
+              <button>LEARN MORE</button>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="form-main"> 
+        <div id="form-image">
+          <img src="./NeoReach-Images/footer-base@2x.png" alt="">
+          
+          <div id="form-search-main">
+            <div id="form-search"><img src="./NeoReach-Images/search-bar@2x.png" alt=""></div>
+            <hr>
+            <div id="form-search-dots"><img src="./NeoReach-Images/search-dots.svg" alt=""></div>
+          </div>
+          <div id="form-massage">
+            <img src="./NeoReach-Images/talkbubble-girl@2x.png" alt="">
+          </div>
+          <div id="form-massage-2">
+            <img src="./NeoReach-Images/talkbubble-blank@2x.png" alt="">
+          </div>
+          <div id="form-massage-3">
+            <img src="./NeoReach-Images/talkbubble-guy@2x.png" alt="">
+          </div>
+          <div id="form-opacity-dots">
+            <div id="form-opacity-dots-1">
+              <div id="form-opacity-dots-1-a"></div>
+            </div>
+            <div id="form-opacity-dots-1">
+              <div id="form-opacity-dots-1-b"></div>
+              <div id="form-opacity-dots-1-c"></div>
+            </div>
+            <div id="form-opacity-dots-1">
+              <div id="form-opacity-dots-1-d"></div>
+              <div id="form-opacity-dots-1-e"></div>
+              <div id="form-opacity-dots-1-f"></div>
+            </div>
+            <div id="form-opacity-dots-1">
+              <div id="form-opacity-dots-1-g"></div>
+              <div id="form-opacity-dots-1-h"></div>
+              <div id="form-opacity-dots-1-i"></div>
+              <div id="form-opacity-dots-1-j"></div>
+            </div>
+          </div>
+
+          <div id="form-2-opacity-dots">
+            <div id="form-opacity-dots-1">
+              <div id="form-opacity-dots-1-a"></div>
+            </div>
+            <div id="form-opacity-dots-1">
+              <div id="form-opacity-dots-1-b"></div>
+              <div id="form-opacity-dots-1-c"></div>
+            </div>
+            <div id="form-opacity-dots-1">
+              <div id="form-opacity-dots-1-d"></div>
+              <div id="form-opacity-dots-1-e"></div>
+              <div id="form-opacity-dots-1-f"></div>
+            </div>
+            <div id="form-opacity-dots-1">
+              <div id="form-opacity-dots-1-g"></div>
+              <div id="form-opacity-dots-1-h"></div>
+              <div id="form-opacity-dots-1-i"></div>
+              <div id="form-opacity-dots-1-j"></div>
+            </div>
+          </div>
+          <div id="form-wave-parent">
+            <div id="form-wave">
+              <img id="form-wave-image1" src="./NeoReach-Images/graph-wave@2x.png" alt="">
+              <img id="form-wave-image2" src="./NeoReach-Images/graph-wave@2x.png" alt="">
+            </div>
+          </div>
+
+        </div>
+        <div id="form-text">
+          <div id="form-text-heading">Start a campaign with us!</div>
+          <div id="form-text-para">
+            Submit the form below, tell us a bit more about <br>
+            your business, and we’ll be in touch shortly. <br>
+            Are you an Influencer? Sign up<span> here</span>
+          </div>
+        </div>
+        <div id="form">
+          <input type="text" id="text1" placeholder="   * First Name">
+          <input type="text" id="text1" placeholder="   * Last Name">
+          <input type="email" id="text1" placeholder="  * Business Email">
+          <input type="number" id="text1" placeholder="  * Contect Phone Number">
+          <input type="text" id="text1" placeholder="  * Company Name">
+          <input type="text" id="text1" placeholder="  * Company Website">
+          <select name="Budget" id="text1">
+            <option value="Budget">* Budget</option>
+            <option value="Budget">Under $20,000</option>
+            <option value="Budget">$20,000 - $49,000</option>
+            <option value="Budget">$50,000 - $99,000</option>
+            <option value="Budget">$100,000 - $249,000</option>
+            <option value="Budget">$250,000 - $499,000</option>
+            <option value="Budget">#500,000 +</option>
+          </select>
+          <select name="* Conpany Size" id="text1">
+            <option value="Budget">* Conpany Name</option>
+            <option value="Budget">1</option>
+            <option value="Budget">2 - 5</option>
+            <option value="Budget">6 - 10</option>
+            <option value="Budget">11 - 25</option>
+            <option value="Budget">26 - 50</option>
+            <option value="Budget">51 - 200</option>
+          </select>
+          <textarea name="" id="text2" cols="30" rows="10" placeholder="  Describe What you're looking to achieve - be as discribted as possible"></textarea>
+          <button>LET'S CHAT!</button>
+        </div>
+
+        <div id="poster">
+          <img id="poster-image1" src="./NeoReach-Images/footer-photobg@2x.png" alt="">
+          <img id="poster-image2" src="./NeoReach-Images/footer-photo1@2x.jpg" alt="">
+        </div>
+      </div>
+
+      <div id="footer-main">
+
+        <div id="footer-push">  
+          <img src="./Solution-Neoreach-images/footer-seal@2x.png" alt="">
+        </div>
+        <div id="footer-text">
+          <div id="footer-text-image"><img src="./NeoReach-Images/logo.svg" alt=""></div>
+          <div id="footer-text-heading">
+            Seamlessly search, manage, and track <br>
+            user-generated content campaigns.
+          </div>
+          <div id="footer-text-icons">
+            <div id="footer-text-icon-1"><i class="fab fa-facebook-f"></i></div>
+            <div id="footer-text-icon-1"><i class="fab fa-twitter"></i></div>
+            <div id="footer-text-icon-1"><i class="fab fa-instagram"></i></div>
+            <div id="footer-text-icon-1"><i class="fab fa-linkedin-in"></i></div>
+          </div>
+        </div>
+        <div id="footer">
+          <div id="footer-1">
+            <span>Advertisers</span>
+            <p>Pricing</p>
+            <p>Case Studies</p>
+            <p>Advertiser FAQ</p>
+          </div>
+          <div id="footer-1">
+            <span>Influencers</span>
+            <p>Community</p>
+            <p>Influencer FAQ</p>
+            <p>Influencer Guidlines</p>
+            <p>Influencer Sign Up</p>
+          </div>
+          <div id="footer-1">
+            <span>Solutions</span>
+            <p>Services</p>
+            <p>Software</p>
+            <p>API</p>
+            <p>Froud Detection</p>
+          </div>
+          <div id="footer-1">
+            <span>Resources</span>
+            <p>Meet the Team</p>
+            <p>Press</p>
+            <p>Privacy</p>
+            <p>Customer Support</p>
+          </div>
+          <div id="footer-1">
+            <span>Contect</span>
+            <p>Email:Team@neoreach.com</p>
+            <p>Careers</p>
+          </div>
+        </div>
+        <div id="footer-copyright">
+          <p>© 2021. All Rights Reserved.</p>
+          <p>Design: <span>Griflan</span></p>
+        </div>
+
+
+      </div>
+
+
+</body>
+</html>

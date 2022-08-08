@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing-NeoReach</title>
+
+
+    <style>
+
+        body{
+            overflow-x: hidden;
+        }
+        *{
+          padding: 0;
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        #navbar{
+          width: 100%;
+          height: 120px;
+          display: flex;
+          position: sticky;
+          top: 0;
+          z-index: 100;
+          justify-content: space-around;
+          align-items: center;
+          background-color: white;
+        }
+        #logo{
+          width: 15%;
+          height: 60px;
+          /* background-color: lightseagreen; */
+        }
+        #logo img{
+          width: 80%;
+          height: 100%;
+        }
+        #nav{
+          width: 40%;
+          height: max-content;
+          /* background-color: green; */
+        }
+        #nav ul{
+          list-style: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+        }
+        #nav ul li a{
+          color: black;
+          text-decoration: none;
+        }
+        #nav ul li{
+          height: 70px;
+          display: flex;
+          align-items: center;
+          /* background-color: burlywood; */
+        }
+        #li-1-hide-image-1{
+          width: 70px;
+          height: 40px;
+          top: 10vh;
+          /* opacity: 0;  */
+          overflow: hidden; 
+          /* left: auto; */
+          /* background-color: royalblue; */
+          position: absolute;
+        }
+        #li-1-hide-image-1 img{
+          width: 70px;
+        }
+        #li-1-hide-image{
+          width: 70px;
+          height: 40px;
+          top: 10vh;
+          opacity: 0; 
+          overflow: hidden; 
+          /* left: auto; */
+          /* background-color: royalblue; */
+          position: absolute;
+        }
+        #nav ul li:hover #li-1-hide-image{
+          opacity: 1;
+          animation: nav-slide 0.4s;
+        }
+        @keyframes nav-slide {
+          0%{width: 0px;}
+          100%{width: 70px;}
+        }
+        #li-1-hide-image img{
+          width: 70px;
+        }
+        #li-1-hide:hover{
+          display: block;
+        }
+        #nav ul li:hover #li-1-hide{
+          /* opacity: 1; */
+          display: block;
+          animation: li-slide1-hide 0.5s;
+        }
+        @keyframes li-slide1-hide {
+          0%{margin-top: 50px;opacity: 0;}
+          50%{opacity: 0.5;}
+          100%{margin-top: 0px;}
+        }
+        #li-1-hide{
+          width: 900px;
+          height: 400px;
+          position: absolute;
+          top: 100px;
+          left: 300px;
+          display: none;
+          /* opacity: 0; */
+          border-radius: 10px;
+          z-index: 10;
+          /* display: flex; */
+          box-shadow: 5px 5px 10px 0 gray;
+          background-color: white;
+        }
+        #li-1-hide-left{
+          width: 50%;
+          height: 350px;
+          border-right: 1px solid silver;
+          margin-top: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          /* background-color: lightcoral;    */
+        }
+        #hide-left-1{
+          width: 70%;
+          height: 30%;
+          /* background-color: skyblue; */
+        }
+        #hide-left-1:hover #hide-left-1-image img{
+          margin-top: 2px;
+        }
+        #hide-left-1:hover #hide-left-1-heading{
+          color: rgb(0,200,175);
+        }
+        #hide-left-1-image{
+          width: 30%;
+          height: 70px;
+          /* background-color: teal; */
+        }
+        #hide-left-1-image img{
+          width: 80%;
+          height: 50px;
+          transition: 0.6s;
+          margin-top: 10px;
+        }
+        #hide-left-1-heading{
+          width: 60%;
+          height: 40px;
+          margin-left: 30%;
+          margin-top: -70px;
+          transition: 0.4s;
+          font-size: 20px;
+          /* background-color: lightgreen; */
+        }
+        #hide-left-1-para{
+          width: 70%;
+          height: 60px;
+          font-size: 15px;
+          margin-left: 30%;
+          /* margin-top: -70px; */
+          /* background-color: darkgoldenrod; */
+        }
+
+
+        #li-1-hide-right{
+          width: 40%;
+          float: right;
+          height: 350px;
+          margin-top: -350px;
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: column;
+          /* background-color: lightcoral;   */
+        }
+        #hide-right-1{
+          width: 90%;
+          height: 30%;
+          margin-top: 10px;
+          /* background-color: skyblue; */
+        }
+        #hide-right-1:hover #hide-right-1-image img{
+          margin-top: 2px;
+        }
+        #hide-right-1:hover #hide-right-1-heading{
+          color: rgb(0,200,175);
+        }
+        #hide-right-1-image{
+          width: 30%;
+          height: 70px;
+          /* background-color: teal; */
+        }
+        #hide-right-1-image img{
+          width: 80%;
+          height: 50px;
+          transition: 0.6s;
+          margin-top: 10px;
+        }
+        #hide-right-1-heading{
+          width: 60%;
+          height: 40px;
+          margin-left: 30%;
+          margin-top: -70px;
+          transition: 0.4s;
+          font-size: 20px;
+          /* background-color: lightgreen; */
+        }
+        #hide-right-1-para{
+          width: 70%;
+          height: 60px;
+          font-size: 15px;
+          margin-left: 30%;
+          /* margin-top: -70px; */
+          /* background-color: darkgoldenrod; */
+        }
+
+
+
+
+        #li-2-hide:hover{
+          display: block;
+        }
+        #nav ul li:hover #li-2-hide{
+          /* opacity: 1; */
+          display: block;
+          animation: li-slide1-hide 0.5s;
+        }
+        @keyframes li-slide1-hide {
+          0%{margin-top: 50px;opacity: 0;}
+          50%{opacity: 0.5;}
+          100%{margin-top: 0px;}
+        }
+        #li-2-hide{
+          width: 700px;
+          height: 300px;
+          position: absolute;
+          top: 100px;
+          left: 500px;
+          z-index: 10;
+          display: none;
+          /* opacity: 0; */
+          box-shadow: 5px 5px 10px 0 gray;
+          border-radius: 10px;
+          background-color: white;
+        }
+        #li-2-hide-left{
+          width: 50%;
+          height: 250px;
+          margin-top: 20px;
+          margin-left: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-evenly;
+          border-right: 1px solid silver;
+          /* background-color: hotpink; */
+        }
+        #li-2-hide-left-1:hover h3{
+          color: rgb(0,200,175);
+          cursor: pointer;
+          }
+          #li-2-hide-left-1:hover h3{
+            transition: 0.4s;
+          }
+          #li-2-hide-left-2:hover h3{
+            transition: 0.4s;
+          }
+        #li-2-hide-left-2:hover h3{
+          color: rgb(0,200,175);
+          cursor: pointer;
+        }
+        #li-2-hide-left-1{
+          width: 90%;
+          height: 100px;
+          /* background-color: slategray; */
+        }
+        #li-2-hide-left-2{
+          width: 90%;
+          height: 100px;
+          /* background-color: darkmagenta; */
+        }
+        #li-2-hide-right{
+          width: 45%;
+          height: 250px;
+          margin-top: -250px;
+          margin-left: 55%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-evenly;
+          /* background-color: pink; */
+        }
+
+
+        #login{
+          /* width: 20%; */
+          /* height: 60px; */
+          width: max-content;
+          height: max-content;
+          /* background-color: seagreen; */
+          display: flex;
+          cursor: pointer;
+          align-items: center;
+        }
+        #login button{
+          border: none;
+          border-radius: 10px;
+          font-size: 15px;
+          color: white;
+          background-color: rgb(0,200,175);
+          /* position: absolute; */
+          padding: 15px 20px;
+          transition: 0.8s;
+          box-shadow: 2px 2px 10px 0 rgb(0,200,175);
+        }
+        #login button:hover{
+          cursor: pointer;
+          background-color: black;
+        }
+
+        
+
+        
+
+
+
+        /* ---------------------------------------Home-Main------------------------- */
+
+
+
+
+        #home-main{
+          width: 100vw;
+          height: 85vh;
+          padding: 1px;
+          /* background-color: darkorchid; */
+        }
+        #home-main-text{
+          width: 70vw;
+          height: 10vh;
+          margin: 4vh auto;
+          /* background-color: slateblue; */
+        }
+        #home-main-text-heading{
+          font-size: 35px;
+          font-weight: bold;
+          text-align: center;
+          color: rgb(26, 25, 25);
+        }
+        #home-main-text-para{
+          font-size: 23px;
+          margin-top: 3vh;
+          text-align: center;
+          color: rgb(26, 25, 25);
+        }
+
+
+        #access{
+          width: 100%;
+          height: 65vh;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+          margin: auto;
+          /* overflow: hidden; */
+          /* background-color: aquamarine; */
+        }
+        /* #access-image{
+          width: 800px;
+          height: 500px;
+          background-color: darkkhaki;
+        } */
+        #access-image-1{
+          width: 100%;
+          height: 100%;
+        }
+
+        #banner{
+          width: 25vw;
+          height: 8vh;
+          top: 45vh;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          box-shadow: 5px 5px 0 0 rgb(162,253,233);
+          position: absolute;
+          border-radius: 10px;
+          border: 1px solid black;
+        }
+        #banner-a:first-child{
+          color: black;
+        }
+        #banner-a:last-child{
+          background-color: white;
+        }
+        #banner-a{
+          height: max-content;
+          width: max-content;
+          font-size: 15px;
+          padding: 10px;
+          color: gray;
+          transition: 0.6s;
+          border-radius: 5px;
+          background-color: rgb(239,239,250);
+        }
+        #banner-a:hover{
+          color: black;
+          cursor: pointer;
+          background-color: rgb(239,239,250);
+        }
+
+
+
+
+    </style>
+
+
+
+</head>
+<body>
+
+
+
+  <div id="navbar">
+    <div id="logo"><a href=""><img src="./NeoReach-Images/logo.svg" alt=""></a></div>
+    <div id="nav">
+      <ul>
+        <li><a href="">Solutions</a>
+          <div id="li-1-hide-image">
+            <img src="./NeoReach-Images/underline@2x.png" alt="">
+          </div>
+          <div id="li-1-hide">
+            <div id="li-1-hide-left">
+              <div id="hide-left-1">
+                <div id="hide-left-1-image">
+                  <img src="./NeoReach-Images/menuicon-services.svg" alt=""></div>
+                <div id="hide-left-1-heading">Managed Services</div>
+                <div id="hide-left-1-para">
+                  Full service influencer marketing campaigns.</div>
+              </div>
+
+              <div id="hide-left-1">
+                <div id="hide-left-1-image">
+                  <img src="./NeoReach-Images/menuicon-software.svg" alt=""></div>
+                <div id="hide-left-1-heading">Software</div>
+                <div id="hide-left-1-para">
+                  Seamlessly search, manage, and track influencer campaigns.</div>
+              </div>
+
+              <div id="hide-left-1">
+                <div id="hide-left-1-image">
+                  <img src="./NeoReach-Images/menuicon-paid.svg" alt=""></div>
+                <div id="hide-left-1-heading">Paid Media</div>
+                <div id="hide-left-1-para">
+                  Develop and execute influencer driven performance marketing campaigns.</div>
+              </div>
+
+            </div>
+            <div id="li-1-hide-right">
+              <div id="hide-right-1">
+                <div id="hide-right-1-image">
+                  <img src="./NeoReach-Images/menuicon-fraud.svg" alt=""></div>
+                <div id="hide-right-1-heading">Froud Detection</div>
+                <div id="hide-right-1-para">
+                  Seamlessly search, manage, and track influencer campaigns.</div>
+              </div>
+
+              <div id="hide-right-1">
+                <div id="hide-right-1-image">
+                  <img src="./NeoReach-Images/menuicon-api.svg" alt=""></div>
+                <div id="hide-right-1-heading">API</div>
+                <div id="hide-right-1-para">
+                  Develop and execute influencer driven performance marketing campaigns.</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="">Services</a>
+          <div id="li-1-hide-image">
+            <img src="./NeoReach-Images/underline@2x.png" alt="">
+          </div></li>
+        <li><a href="">Case Studies</a>
+          <div id="li-1-hide-image">
+            <img src="./NeoReach-Images/underline@2x.png" alt="">
+          </div></li>
+        <li><a href="">Pricing</a>
+          <div id="li-1-hide-image-1">
+            <img src="./NeoReach-Images/underline@2x.png" alt="">
+          </div></li>
+        <li><a href="">Resources</a>
+          <div id="li-1-hide-image">
+            <img src="./NeoReach-Images/underline@2x.png" alt="">
+          </div>
+          <div id="li-2-hide">
+              <div id="li-2-hide-left">
+                <div id="li-2-hide-left-1">
+                  <h3>Blog</h3><br>
+                  <p>Stay updated with the latest influencer marketing trends, tips, and topics.</p>
+                </div>
+                <div id="li-2-hide-left-2">
+                  <h3>Top Lists</h3><br>
+                  <p>Discover the most definitive list of influencers across a range of categories.</p>
+                </div>
+              </div>
+              <div id="li-2-hide-right">
+                <div id="li-2-hide-left-1">
+                  <h3>Top Spenders</h3><br>
+                  <p>See the top brand spenders in influencer marketing this week.</p>
+                </div>
+                <div id="li-2-hide-left-2">
+                  <h3>Industry Reports</h3><br>
+                  <p>Explore leading influencer marketing industry reports.</p>
+                </div>
+              </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="login">
+      <h3>Login</h3>
+      &nbsp;&nbsp;&nbsp;
+      <button>GET STARTED</button>
+    </div>
+</div>
+
+
+
+<div id="home-main">
+  
+  
+  <div id="home-main-text">
+    <div id="home-main-text-heading">
+      Pricing designed for campaigns of all sizes.</div>
+    <div id="home-main-text-para">
+      Customizable solutions for every aspect of the influencer marketing process.
+    </div>
+  </div>
+  
+  
+  <div id="access">
+
+      <img id="access-image-1" src="./Pricing-NeoReach-images/pricing-hero-base@2x.png" alt="">
+
+      <div id="banner">
+        <div id="banner-a">MANAGED SERVICES</div>
+        <div id="banner-a">PLATFORM & API</div>
+      </div>
+
+      <div id="services">
+        
+      </div>
+
+  </div>
+
+  </div>
+
+
+  
+</body>
+</html>

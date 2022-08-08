@@ -1,0 +1,2355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Case-studies</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+
+
+ <style>
+
+        body{
+            overflow-x: hidden;
+        }
+        *{
+          padding: 0;
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        #navbar{
+          width: 100%;
+          height: 120px;
+          display: flex;
+          position: sticky;
+          top: 0;
+          z-index: 100;
+          justify-content: space-around;
+          align-items: center;
+          background-color: white;
+        }
+        #logo{
+          width: 15%;
+          height: 60px;
+          /* background-color: lightseagreen; */
+        }
+        #logo img{
+          width: 80%;
+          height: 100%;
+        }
+        #nav{
+          width: 40%;
+          height: max-content;
+          /* background-color: green; */
+        }
+        #nav ul{
+          list-style: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+        }
+        #nav ul li a{
+          color: black;
+          text-decoration: none;
+        }
+        #nav ul li{
+          height: 70px;
+          display: flex;
+          align-items: center;
+          /* background-color: burlywood; */
+        }
+        #li-1-hide-image-1{
+          width: 70px;
+          height: 40px;
+          top: 10vh;
+          /* opacity: 0;  */
+          overflow: hidden; 
+          /* left: auto; */
+          /* background-color: royalblue; */
+          position: absolute;
+        }
+        #li-1-hide-image-1 img{
+          width: 70px;
+        }
+        #li-1-hide-image{
+          width: 70px;
+          height: 40px;
+          top: 10vh;
+          opacity: 0; 
+          overflow: hidden; 
+          /* left: auto; */
+          /* background-color: royalblue; */
+          position: absolute;
+        }
+        #nav ul li:hover #li-1-hide-image{
+          opacity: 1;
+          animation: nav-slide 0.4s;
+        }
+        @keyframes nav-slide {
+          0%{width: 0px;}
+          100%{width: 70px;}
+        }
+        #li-1-hide-image img{
+          width: 70px;
+        }
+        #li-1-hide:hover{
+          display: block;
+        }
+        #nav ul li:hover #li-1-hide{
+          /* opacity: 1; */
+          display: block;
+          animation: li-slide1-hide 0.5s;
+        }
+        @keyframes li-slide1-hide {
+          0%{margin-top: 50px;opacity: 0;}
+          50%{opacity: 0.5;}
+          100%{margin-top: 0px;}
+        }
+        #li-1-hide{
+          width: 900px;
+          height: 400px;
+          position: absolute;
+          top: 100px;
+          left: 300px;
+          display: none;
+          /* opacity: 0; */
+          border-radius: 10px;
+          z-index: 10;
+          /* display: flex; */
+          box-shadow: 5px 5px 10px 0 gray;
+          background-color: white;
+        }
+        #li-1-hide-left{
+          width: 50%;
+          height: 350px;
+          border-right: 1px solid silver;
+          margin-top: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          /* background-color: lightcoral;    */
+        }
+        #hide-left-1{
+          width: 70%;
+          height: 30%;
+          /* background-color: skyblue; */
+        }
+        #hide-left-1:hover #hide-left-1-image img{
+          margin-top: 2px;
+        }
+        #hide-left-1:hover #hide-left-1-heading{
+          color: rgb(0,200,175);
+        }
+        #hide-left-1-image{
+          width: 30%;
+          height: 70px;
+          /* background-color: teal; */
+        }
+        #hide-left-1-image img{
+          width: 80%;
+          height: 50px;
+          transition: 0.6s;
+          margin-top: 10px;
+        }
+        #hide-left-1-heading{
+          width: 60%;
+          height: 40px;
+          margin-left: 30%;
+          margin-top: -70px;
+          transition: 0.4s;
+          font-size: 20px;
+          /* background-color: lightgreen; */
+        }
+        #hide-left-1-para{
+          width: 70%;
+          height: 60px;
+          font-size: 15px;
+          margin-left: 30%;
+          /* margin-top: -70px; */
+          /* background-color: darkgoldenrod; */
+        }
+
+
+        #li-1-hide-right{
+          width: 40%;
+          float: right;
+          height: 350px;
+          margin-top: -350px;
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: column;
+          /* background-color: lightcoral;   */
+        }
+        #hide-right-1{
+          width: 90%;
+          height: 30%;
+          margin-top: 10px;
+          /* background-color: skyblue; */
+        }
+        #hide-right-1:hover #hide-right-1-image img{
+          margin-top: 2px;
+        }
+        #hide-right-1:hover #hide-right-1-heading{
+          color: rgb(0,200,175);
+        }
+        #hide-right-1-image{
+          width: 30%;
+          height: 70px;
+          /* background-color: teal; */
+        }
+        #hide-right-1-image img{
+          width: 80%;
+          height: 50px;
+          transition: 0.6s;
+          margin-top: 10px;
+        }
+        #hide-right-1-heading{
+          width: 60%;
+          height: 40px;
+          margin-left: 30%;
+          margin-top: -70px;
+          transition: 0.4s;
+          font-size: 20px;
+          /* background-color: lightgreen; */
+        }
+        #hide-right-1-para{
+          width: 70%;
+          height: 60px;
+          font-size: 15px;
+          margin-left: 30%;
+          /* margin-top: -70px; */
+          /* background-color: darkgoldenrod; */
+        }
+
+
+
+
+        #li-2-hide:hover{
+          display: block;
+        }
+        #nav ul li:hover #li-2-hide{
+          /* opacity: 1; */
+          display: block;
+          animation: li-slide1-hide 0.5s;
+        }
+        @keyframes li-slide1-hide {
+          0%{margin-top: 50px;opacity: 0;}
+          50%{opacity: 0.5;}
+          100%{margin-top: 0px;}
+        }
+        #li-2-hide{
+          width: 700px;
+          height: 300px;
+          position: absolute;
+          top: 100px;
+          left: 500px;
+          z-index: 10;
+          display: none;
+          /* opacity: 0; */
+          box-shadow: 5px 5px 10px 0 gray;
+          border-radius: 10px;
+          background-color: white;
+        }
+        #li-2-hide-left{
+          width: 50%;
+          height: 250px;
+          margin-top: 20px;
+          margin-left: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-evenly;
+          border-right: 1px solid silver;
+          /* background-color: hotpink; */
+        }
+        #li-2-hide-left-1:hover h3{
+          color: rgb(0,200,175);
+          cursor: pointer;
+          }
+          #li-2-hide-left-1:hover h3{
+            transition: 0.4s;
+          }
+          #li-2-hide-left-2:hover h3{
+            transition: 0.4s;
+          }
+        #li-2-hide-left-2:hover h3{
+          color: rgb(0,200,175);
+          cursor: pointer;
+        }
+        #li-2-hide-left-1{
+          width: 90%;
+          height: 100px;
+          /* background-color: slategray; */
+        }
+        #li-2-hide-left-2{
+          width: 90%;
+          height: 100px;
+          /* background-color: darkmagenta; */
+        }
+        #li-2-hide-right{
+          width: 45%;
+          height: 250px;
+          margin-top: -250px;
+          margin-left: 55%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-evenly;
+          /* background-color: pink; */
+        }
+
+
+        #login{
+          /* width: 20%; */
+          /* height: 60px; */
+          width: max-content;
+          height: max-content;
+          /* background-color: seagreen; */
+          display: flex;
+          cursor: pointer;
+          align-items: center;
+        }
+        #login button{
+          border: none;
+          border-radius: 10px;
+          font-size: 15px;
+          color: white;
+          background-color: rgb(0,200,175);
+          /* position: absolute; */
+          padding: 15px 20px;
+          transition: 0.8s;
+          box-shadow: 2px 2px 10px 0 rgb(0,200,175);
+        }
+        #login button:hover{
+          cursor: pointer;
+          background-color: black;
+        }
+
+
+        
+
+
+
+        /* ---------------------------------------Home-Main------------------------- */
+
+
+
+
+        #home-main{
+          width: 100vw;
+          height: 85vh;
+          padding: 1px;
+          /* background-color: darkorchid; */
+        }
+        #home-main-text{
+          width: 70vw;
+          height: 10vh;
+          margin: 4vh auto;
+          /* background-color: slateblue; */
+        }
+        #home-main-text-heading{
+          font-size: 35px;
+          font-weight: bold;
+          text-align: center;
+          color: rgb(26, 25, 25);
+        }
+        #home-main-text-para{
+          font-size: 23px;
+          margin-top: 3vh;
+          text-align: center;
+          color: rgb(26, 25, 25);
+        }
+
+
+        #access{
+          width: 70%;
+          height: 45vh;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+          margin: auto;
+          /* overflow: hidden; */
+          /* background-color: aquamarine; */
+        }
+        /* #access-image{
+          width: 800px;
+          height: 500px;
+          background-color: darkkhaki;
+        } */
+        #access-image-1{
+          width: 100%;
+          height: 100%;
+        }
+        #access-image-2{
+          width: 130px;
+          height: 240px;
+          left: 25vw;
+          margin-top: 12vh;
+          transition: 0.5s;
+          position: absolute;
+          /* background-color: blueviolet; */
+        }
+        #access-image-2 img{
+          width: 100%;
+          height: 100%;
+        }
+        #access-image-3{
+          width: 50px;
+          height: 80px;
+          left: 34vw;
+          overflow: hidden;
+          margin-top: 34vh;
+          position: absolute;
+          /* background-color: blueviolet; */
+        }
+        #access-image-3 img{
+          width: 100%;
+          height: 120px;
+        }
+        #access-image-4{
+          width: 180px;
+          height: 260px;
+          left: 35vw;
+          overflow: hidden;
+          margin-top: 9vh;
+          position: absolute;
+          /* background-color: blueviolet; */
+        }
+        #access-image-4 img{
+          width: 100%;
+          height: 270px;
+        }
+        #access-image-5{
+          width: 75px;
+          height: 80px;
+          left: 46vw;
+          overflow: hidden;
+          margin-top: 34vh;
+          position: absolute;
+          /* background-color: blueviolet; */
+        }
+        #access-image-5 img{
+          width: 100%;
+          height: 120px;
+        }
+        #access-image-6{
+          width: 50px;
+          height: 95px;
+          left: 60vw;
+          overflow: hidden;
+          margin-top: 32vh;
+          position: absolute;
+          /* background-color: blueviolet; */
+        }
+        #access-image-6 img{
+          width: 100%;
+          height: 110px;
+        }
+        #access-image-7{
+          width: 140px;
+          height: 260px;
+          left: 65vw;
+          overflow: hidden;
+          margin-top: 9vh;
+          position: absolute;
+          /* background-color: blueviolet; */
+        }
+        #access-image-7 img{
+          width: 100%;
+          height: 270px;
+        }
+        #access-image-8{
+          width: 70px;
+          height: 70px;
+          left: 19vw;
+          /* overflow: hidden; */
+          margin-top: 10vh;
+          position: absolute;
+          /* background-color: blueviolet; */
+        }
+        #access-image-8 img{
+          width: 100%;
+          height: 100%;
+        }
+        #access-image-9{
+          width: 100px;
+          height: 100px;
+          left: 70vw;
+          /* overflow: hidden; */
+          margin-top: -22vh;
+          position: absolute;
+          z-index: -1;
+          /* background-color: blueviolet; */
+        }
+        #access-image-9 img{
+          width: 100%;
+          height: 100%;
+        }
+        #access-image-10{
+          width: 110px;
+          height: 100px;
+          left: 49vw;
+          /* overflow: hidden; */
+          margin-top: -10vh;
+          position: absolute;
+          /* z-index: -1; */
+          /* background-color: blueviolet; */
+        }
+        @keyframes device-1 {
+          0%{margin-top: 0vh;}
+          50%{margin-top: 2vh;}
+          100%{margin-top: 0vh;}
+        }
+        #access-image-10 img{
+          animation: device-1 2.5s linear infinite ;
+          width: 100px;
+          height: 70px;
+        }  
+        #access-image-11{
+          width: 110px;
+          height: 100px;
+          left: 54vw;
+          /* overflow: hidden; */
+          margin-top: 20vh;
+          position: absolute;
+          /* z-index: -1; */
+          /* background-color: blueviolet; */
+        }
+        @keyframes device-2 {
+          0%{margin-top: 0vh;}
+          50%{margin-top: 1vh;}
+          100%{margin-top: 0vh;}
+        }
+        #access-image-11 img{
+          animation: device-2 2s linear infinite ;
+          width: 60px;
+          height: 70px;
+        }
+        #access-image-12{
+          width: 110px;
+          height: 100px;
+          left: 59vw;
+          /* overflow: hidden; */
+          margin-top: 0vh;
+          position: absolute;
+          /* z-index: -1; */
+          /* background-color: blueviolet; */
+        }
+        @keyframes device-3 {
+          0%{margin-top: 0vh;}
+          50%{margin-top: 2vh;}
+          100%{margin-top: 0vh;}
+        }
+        #access-image-12 img{
+          animation: device-3 3s linear infinite ;
+          width: 60px;
+          height: 70px;
+        }
+        #access-image-13{
+          width: 110px;
+          height: 100px;
+          left: 76vw;
+          /* overflow: hidden; */
+          margin-top: 10vh;
+          position: absolute;
+          /* z-index: -1; */
+          /* background-color: blueviolet; */
+        }
+        @keyframes device-4 {
+          0%{margin-top: 0vh;}
+          50%{margin-top: 2vh;}
+          100%{margin-top: 0vh;}
+        }
+        #access-image-13 img{
+          animation: device-4 3s linear infinite ;
+          width: 70px;
+          height: 80px;
+        }  
+
+        #girl-1-line{
+          width: 21px;
+          height: 4px;
+          left: 480px;
+          border-radius: 30px;
+          margin-top: -82px;
+          border: 1px solid black;
+          position: absolute;
+          /* background-color: brown; */
+        }
+        #girl-1-dot{
+          width: 4px;
+          height: 4px;
+          border-radius: 30px;
+          margin-top: -1px;
+          border: 1px solid black;
+          animation: girl-dot 3.5s ease-out infinite;
+        }
+        @keyframes girl-dot {
+          0%{margin-left: 0px;}
+          50%{margin-left: 16px;}
+          100%{margin-left: 0px;}
+        }
+        #girl-1-line-2{
+          width: 21px;
+          height: 4px;
+          left: 480px;
+          border-radius: 30px;
+          margin-top: -120px;
+          border: 1px solid black;
+          position: absolute;
+          /* background-color: brown; */
+        }
+        #girl-1-dot-2{
+          width: 4px;
+          height: 4px;
+          border-radius: 30px;
+          margin-top: -1px;
+          border: 1px solid black;
+          animation: girl-dot-2 4s ease-out infinite;
+        }
+        @keyframes girl-dot-2 {
+          0%{margin-left: 16px;}
+          50%{margin-left: 0px;}
+          100%{margin-left: 16px;}
+        }
+        #graph-lines{
+          width: 120px;
+          height: 80px;
+          display: flex;
+          left: 65.5vw;
+          margin-top: -12vh;
+          transform: rotate(175deg);
+          justify-content: space-evenly;
+          position: absolute;
+          /* background-color: blueviolet; */
+        }
+        #graph-line-1{
+          width: 5px;
+          height: 80px;
+          border: 1px solid black;
+          border-radius: 5px;
+          animation: graph-line-1 0.4s;
+          background-color: rgb(255,151,146);
+        }
+        @keyframes graph-line-1 {
+          0%{height: 0px;}
+          100%{height: 80px;}
+        }
+        #graph-line-2{
+          width: 5px;
+          height: 40px;
+          border: 1px solid black;
+          border-radius: 5px;
+          animation: graph-line-2 0.4s;
+          background-color: rgb(255,204,128);
+        }
+        @keyframes graph-line-2 {
+          0%{height: 0px;}
+          100%{height: 40px;}
+        }
+        #graph-line-3{
+          width: 5px;
+          height: 30px;
+          border: 1px solid black;
+          border-radius: 5px;
+          animation: graph-line-3 0.4s;
+          background-color: rgb(255,204,128);
+        }
+        @keyframes graph-line-3 {
+          0%{height: 0px;}
+          100%{height: 30px;}
+        }
+        #graph-line-4{
+          width: 5px;
+          height: 20px;
+          border: 1px solid black;
+          animation: graph-line-4 0.4s;
+          border-radius: 5px;
+          background-color: rgb(255,204,128);
+        }
+        @keyframes graph-line-4 {
+          0%{height: 0px;}
+          100%{height: 20px;}
+        }
+        #graph-line-5{
+          width: 5px;
+          height: 25px;
+          border: 1px solid black;
+          border-radius: 5px;
+          animation: graph-line-5 0.4s;
+          background-color: rgb(255,204,128);
+        }
+        @keyframes graph-line-5 {
+          0%{height: 0px;}
+          100%{height: 25px;}
+        }
+        #graph-line-6{
+          width: 5px;
+          height: 20px;
+          border: 1px solid black;
+          border-radius: 5px;
+          animation: graph-line-6 0.4s;
+          background-color: rgb(255,204,128);
+        }
+        @keyframes graph-line-6 {
+          0%{height: 0px;}
+          100%{height: 20px;}
+        }
+        #graph-line-7{
+          width: 5px;
+          height: 25px;
+          border: 1px solid black;
+          border-radius: 5px;
+          animation: graph-line-7 0.4s;
+          background-color: rgb(255,204,128);
+        }
+        @keyframes graph-line-7 {
+          0%{height: 0px;}
+          100%{height: 25px;}
+        }
+        #graph-line-8{
+          width: 5px;
+          height: 16px;
+          border: 1px solid black;
+          border-radius: 5px;
+          animation: graph-line-8 0.4s;
+          background-color: rgb(255,204,128);
+        }
+        @keyframes graph-line-8 {
+          0%{height: 0px;}
+          100%{height: 16px;}
+        }
+
+        #blink-lines{
+          width: 50px;
+          height: 50px;
+          left: 70.8vw;
+          transform: rotate(-4deg);
+          /* overflow: hidden; */
+          margin-top: -25vh;
+          position: absolute;
+          /* z-index: -1; */
+          /* background-color: blueviolet; */
+        }
+        #blink-lines img{
+          width: 100%;
+          height: 100%;
+          animation: blink-lines 3s linear infinite;
+        }
+        @keyframes blink-lines {
+          0%{opacity: 0;}
+          20%{opacity: 0;}
+          25%{opacity: 1;}
+          40%{opacity: 0;}
+          45%{opacity: 1;}
+          60%{opacity: 0;}
+          80%{opacity: 1;}
+          100%{opacity: 1;}
+        }
+
+
+
+
+
+      /* ---------------------------------------Brands---------------------------- */
+
+
+
+
+        #brands-main-parent{
+          width: 100%;
+          height: 22vh;
+          /* display: flex; */
+          /* justify-content: space-between; */
+          /* align-items: center; */
+          overflow: hidden;
+          /* background-color: darkgreen; */
+        }
+        #brands-main{
+          width: 250%;
+          height: 20vh;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          animation: brands-move 20s linear infinite;
+          /* background-color: blueviolet; */
+        }
+        @keyframes brands-move {
+          0%{margin-left: 0%;}
+          100%{margin-left: -125%;}
+        }
+        #brands{
+          width: 130%;
+          height: 18vh;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
+          /* background-color: violet; */
+        }
+        #brands img{
+          width: 120px;
+          /* height: 100px; */
+        }
+
+        
+
+        
+        /* -----------------------------------Studies--------------------------- */
+
+
+        #studies-main{
+          width: 100vw;
+          height: auto;
+          padding: 1px;
+          /* background-color: lightgrey; */
+        }
+        #studies{
+          width: 80%;
+          height: 550vh;
+          margin: auto;
+          display: grid;
+          grid-gap: 60px;
+          grid-auto-rows: 600px;
+          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+          /* display: flex;
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+          align-items: center; */
+          /* background-color: royalblue; */
+        }
+        #studies-a{
+          width: 350px; 
+          height: 600px;
+          border: 1px solid black;
+          border-radius: 10px;
+          box-shadow: 12px 12px 30px 0 rgb(197, 196, 196);
+          /* background-color: seagreen; */
+        }
+        #studies-image{
+          width: 45%;
+          height: 12vh;
+          margin: 3vh auto;
+          /* background-color: blueviolet; */
+        }
+        #studies-image img{
+          width: 100%;
+        }
+        #studies-para{
+          text-align: center; 
+          width: 90%;
+          height: 12vh;
+          line-height: 30px;
+          font-size: 17px;
+          margin: auto;
+          /* background-color: blueviolet; */
+        }
+        #studies-table{ 
+          width: 90%;
+          height: 28vh;
+          display: flex;
+          flex-wrap: wrap;
+          margin: 2vh auto;
+          border-top: 1px solid silver;
+          border-bottom: 1px solid silver;
+          /* background-color: blueviolet; */
+        }
+        #studies-table-1{
+          width: 49%;
+          height: 70%;
+          border-right: 1px solid silver;
+          border-bottom: 1px solid silver;
+          /* background-color: slateblue; */
+        }
+        #studies-table-1 img{
+          width: 50%;
+          margin: 2vh 2vw;
+        }
+        #studies-table-1 p{
+          margin: -2vh 2vw;
+          font-size: 30px;
+          font-weight: bold;
+        }
+        #studies-table-2 img{
+          width: 60%;
+          margin: 2vh 2vw;
+        }
+        #studies-table-2 p{
+          margin: -4.5vh 3.5vw;
+          font-size: 30px;
+          font-weight: bold;
+        }
+        #studies-table-2{
+          width: 49%;
+          height: 70%;
+          /* border-left: 1px solid silver; */
+          border-bottom: 1px solid silver;
+          /* background-color: blue; */
+        }
+        #studies-table-3{
+          width: 49%;
+          height: 20%;
+          padding: 20px 0 0 0;
+          text-align: center;
+          font-size: 18px;
+          /* border-top: 1px solid silver; */
+          border-right: 1px solid silver;
+          /* background-color: lightsalmon; */
+        }
+        #studies-table-4{
+          width: 49%;
+          height: 20%;
+          font-size: 16px;
+          padding: 20px 0 0 0;
+          text-align: center;
+          /* border-top: 1px solid silver; */
+          /* border-left: 1px solid silver; */
+          /* background-color: lightseagreen; */
+        }
+
+
+        #studies button{
+          padding: 15px 25px;
+          background-color: rgb(0,200,175);
+          color: white;
+          border: none;
+          border-radius: 10px;
+          font-size: 18px;
+          margin-left: 25%;
+          margin-top: 4vh;
+          transition: 0.5s;
+          box-shadow: 5px 5px 10px 0 rgb(0,200,175);
+        }
+        #studies button:hover{
+          cursor: pointer;
+          background-color: black;
+        }
+
+        /* #studies-end{
+          margin-left: -20vw;
+        } */
+
+
+        
+
+
+
+        /* --------------------------------Evaluation---------------------------- */
+        
+
+
+
+
+        #evaluaton-main{
+          width: 90%;
+          height: 90vh;
+          margin: auto;
+          z-index: -10;
+          padding: 1px;          
+          background-color: rgb(255, 232, 235);
+        }
+        #evaluaton-image{
+          width: 10%;
+          height: 20vh;
+          margin: 3vh auto;
+          /* background-color: darkgreen; */
+        }
+        #evaluaton-image img{
+          width: 100%;
+          height: 100%;
+        }
+        #evaluaton-text{
+          width: 60%;
+          height: 40vh;
+          margin: 10vh auto;
+          /* background-coSlor: green; */
+        }
+        #evaluaton-text-heading{
+          font-size: 39px;
+          line-height: 50px;
+          font-weight: bold;
+          color: rgb(26, 25, 25);
+          text-align: center;
+        }
+        #evaluaton-text-para{
+          font-size: 20px;
+          color: rgb(26, 25, 25);
+          text-align: center;
+          margin-top: 5vh;
+        }
+        #banner-pink{
+          width: 1000px;
+          height: 150px;
+          margin-top: -80vh;
+          left: -5vw;
+          transform: rotate(8deg);
+          /* background-color: royalblue; */
+          /* z-index: -1; */
+          position: absolute;
+        }
+        #banner-pink img{
+          width: 100%;
+        }
+        #banner-pink-2{
+          width: 1000px;
+          height: 150px;
+          margin-top: -15vh;
+          left: 35vw;
+          /* background-color: royalblue; */
+          position: absolute;
+        }
+        #banner-pink-2 img{
+          width: 100%;
+        }
+
+        #evaluation-line{
+          width:90px;
+          height: 150px;
+          margin-top: 2vh;
+          left: 45vw;
+          /* background-color: royalblue; */
+          position: absolute;
+        }
+        #evaluation-line img{
+          width: 100%;
+          height: 100%;
+        }
+
+        
+
+
+        /* ----------------------------------Form----------------------------------- */
+
+
+
+        #form-main{
+          width: 90vw;
+          height: 170vh;
+          margin: 20vh auto;
+          background-color: rgb(231,254,248);
+        }
+        #form-image{
+          width: 40vw;
+          height: 45vh;
+          margin: auto;
+          /* background-color: lightgreen; */
+        }
+        #form-image img{
+          width: 100%;
+          /* position: relative; */
+          height: 100%;
+        }
+        
+        #form-search-main{
+          width: 15vw;
+          height: 4vh;
+          position: absolute;
+          border-radius: 30px;
+          overflow: hidden;
+          margin-left: 5vw;
+          margin-top: -29vh;
+          border: 2px solid black;
+          background-color: rgb(117,223,252);
+        }
+        #form-search-main hr{
+          width: 10vw;
+          height: 0.1vh;
+          margin-top: -2.1vh;
+          margin-left: 5vw;
+          background-color: black;
+        }
+        #form-search{
+          width: 9vw;
+          height: 4vh;
+          position: relative;
+          border-radius: 30px;
+          /* background-color: blue; */
+        }
+        #form-search-dots{
+          width: 15vw;
+          height: 4vh;
+          margin-top: -2vh;
+          margin-left: 1vw;
+          border-radius: 30px;
+          animation: form-search-dots-move 10s linear infinite;
+          /* background-color: blue; */
+        }
+        #form-search-dots img{
+          width: 100%;
+        }
+        @keyframes form-search-dots-move {
+
+            0%{margin-left: 1vw;}
+            100%{margin-left: 12vw;}
+
+          }
+        #form-search img{
+          margin-top: -0.4vh;
+          height: 135%;
+          width: 100%;
+        }
+        #form-massage{
+          width: 180px;
+          height: 50px;
+          margin-top: -8vh;
+          margin-left: 0%;
+          /* background-color: indigo; */
+          position: absolute;
+        }
+        #form-massage img{
+          animation: form-message-move 3s linear infinite;
+          width: 100%;
+        }
+        @keyframes form-message-move {
+
+              0%{margin-top: 0px;}
+              50%{margin-top: 10px;}
+              100%{margin-top: 0px;}
+
+        }
+
+        #form-massage-2{
+          width: 180px;
+          height: 50px;
+          margin-top: -46vh;
+          margin-left: 15%;
+          /* background-color: indigo; */
+          position: absolute;
+        }
+        #form-massage-2 img{
+          animation: form-message-2-move 3s linear infinite;
+          width: 100%;
+        }
+        @keyframes form-message-2-move {
+
+              0%{margin-top: 0px;}
+              50%{margin-top: 10px;}
+              100%{margin-top: 0px;}
+
+        }
+
+        #form-massage-3{
+          width: 180px;
+          height: 50px;
+          margin-top: -32vh;
+          margin-left: 27%;
+          /* background-color: indigo; */
+          position: absolute;
+        }
+        #form-massage-3 img{
+          animation: form-message-3-move 3s linear infinite;
+          width: 100%;
+        }
+        @keyframes form-message-3-move {
+
+              0%{margin-top: 0px;}
+              50%{margin-top: 10px;}
+              100%{margin-top: 0px;}
+
+        }
+
+        #form-opacity-dots{
+          width: 100px;
+          height: 80px;
+          margin-left: 16vw;
+          margin-top: -40vh;
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          /* background-color: brown; */
+        }
+        #form-opacity-dots-1{
+          width: 90%;
+          height: 18px;
+          display: flex;
+          flex-direction: row;
+          /* background-color: cadetblue; */
+        }
+        #form-opacity-dots-1-a{
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          animation: form-dot-1-a 5s linear infinite;  
+          border: 1px solid black;
+        }
+        @keyframes form-dot-1-a {
+            0%{opacity: 0;}
+            20%{opacity: 1;}
+            80%{opacity: 1;}
+            100%{opacity: 0;}
+        }
+        #form-opacity-dots-1-b{
+          width: 10px;
+          height: 10px;
+          animation: form-dot-1-b 5s linear infinite;  
+          border-radius: 50%;
+          background-color: rgb(0,200,175);
+        }
+        @keyframes form-dot-1-b {
+            0%{opacity: 1;}
+            30%{opacity: 0;}
+            40%{opacity: 0;}
+            90%{opacity: 1;}
+            100%{opacity: 0;}
+        }
+        #form-opacity-dots-1-c{
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          background-color: orange;
+        }
+
+        #form-opacity-dots-1-d{
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          border: 1px solid black;
+          animation: dot-1-a 6s linear infinite;  
+          /* background-color: rgb(0,200,175); */
+        }
+        #form-opacity-dots-1-e{
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          background-color: rgb(0,200,175);
+        }
+        #form-opacity-dots-1-f{
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          border: 1px solid black;
+          /* background-color: orange; */
+        }
+
+        #form-opacity-dots-1-g{
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          animation: form-dot-1-g 4s linear infinite;
+          /* border: 1px solid black; */
+          background-color : purple;
+        }
+        @keyframes form-dot-1-g {
+          
+            0%{opacity: 1;}
+            50%{opacity: 1;}
+            60%{opacity: 0;}
+            100%{opacity: 1;}
+
+        }
+        #form-opacity-dots-1-h{
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          border: 1px solid black;
+          /* background-color: rgb(0,200,175); */
+        }
+        #form-opacity-dots-1-i{
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          animation: form-dot-1-i 5s linear infinite;  
+          border: 1px solid black;
+          /* background-color: orange; */
+        }
+        @keyframes form-dot-1-i {
+            0%{opacity: 1;}
+            20%{opacity: 0;}
+            40%{opacity: 1;}
+            80%{opacity: 1;}
+            100%{opacity: 0;}
+        }
+        #form-opacity-dots-1-j {
+          width: 10px;
+          height: 10px;
+          margin-left: 0.5vw;
+          border-radius: 50%;
+          /* border: 1px solid black; */
+          background-color: rgb(0,200,175);
+        }
+        #form-2-opacity-dots{
+          width: 100px;
+          height: 80px;
+          margin-left: -1vw;
+          margin-top: -45vh;
+          position: absolute;
+          display: flex;
+          transform: rotateY(180deg);
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          /* background-color: brown; */
+        }
+
+        #form-wave-parent{
+          width: 14vw;
+          height: 33vh;
+          margin-left: 6vw;
+          margin-top: -40vh;
+          position: absolute;
+          overflow: hidden;
+          border-radius: 50%;
+          /* background-color: aqua; */
+        }
+        #form-wave{
+          /* width: 30vw; */
+          /* height: 10vh; */
+          /* margin-left: 60vw; */
+          margin-top: 18vh;
+          /* position: absolute; */
+          display: flex;
+          animation: form-wave-move 10s linear infinite;
+          /* background-color: indigo; */
+        }
+        @keyframes form-wave-move {
+          
+            0%{margin-left: 0px;}
+            100%{margin-left: -253px;}
+
+        }
+        #form-wave #form-wave-image1{
+          width: 15vw;          
+          height: 6vh;
+        }
+        #form-wave #form-wave-image2{
+          width: 15vw;          
+          height: 6vh;
+          margin-left: -0.6vw;
+        }
+
+
+
+
+
+        #form-text{
+          width: 30vw;
+          height: 30vh;
+          margin: auto;
+          padding: 1px;
+          /* background-color: green; */
+        }
+        #form-text-heading{
+          font-size: 30px;
+          text-align: center;
+          font-weight: bold;
+          margin-top: 3vh;
+        }
+        #form-text-para{
+          font-size: 18px;
+          margin-top: 2vh;
+          line-height: 30px;
+          text-align: center;
+        }
+        #form-text-para span{
+          color: rgb(0,200,175);
+          cursor: pointer;
+          transition: 0.5s;
+        }
+        #form-text-para span:hover{
+          color: black;
+        }
+        #form{
+          width: 55vw;
+          height: 80vh;
+          margin: auto;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          /* background-color: lightseagreen; */
+        }
+        #text1{
+          width: 400px;
+          height: 50px;
+          font-size: 15px;
+          color: gray;
+          border: 1px solid black;
+          border-radius: 10px;
+          box-shadow: 5px 5px 5px 0 rgb(0,200,175);
+        }
+        #form textarea{
+          width: 900px;
+          height: 100px;
+          border: 1px solid black;
+          border-radius: 10px;
+          box-shadow: 5px 5px 5px 0 rgb(0,200,175);
+        }
+        #form button{
+          padding: 15px 70px;
+          font-size: 18px;
+          margin-left: 20vw;
+          border: none;
+          border-radius: 10px;
+          background-color: rgb(0,200,175);
+          color: white;
+          transition: 0.5s;
+          box-shadow: 5px 5px 10px 0 rgb(0,200,175);  
+        }
+        #form button:hover{
+          background-color: black;
+          cursor: pointer;
+        }
+        #poster{
+          width: 200px;
+          height: 300px;
+          margin-left: 75vw;
+          margin-top: -40vh;
+          position: absolute;
+          /* background-color: darkgreen; */
+        }
+        #poster-image1{
+          width: 100%;
+          position: absolute;
+        }
+        #poster-image2{
+          height: 22vh;
+          z-index: 10;
+          margin-left: 0.6vw;
+          margin-top: 18vh;
+          position: absolute;
+          width: 90%;
+        }
+
+
+
+          /* ----------------------------------Footer----------------------- */
+
+
+
+        #footer-main{
+          width: 100vw;
+          height: 100vh;
+          padding: 1px;
+          /* background-color: darkorange; */
+        }
+        #footer-text{
+          width: 30%;
+          height: 35vh;
+          padding: 1px;
+          margin: 5vh auto;
+          /* background-color: darkslateblue; */
+        }
+        #footer-text-image{
+          width: 200px;
+          height: 50px;
+          margin: 2vh auto;
+          /* background-color: darkmagenta; */
+        }
+        #footer-text-heading{
+          font-size: 20px;
+          line-height: 35px;
+          text-align: center;
+        }
+        #footer-text-icons{
+          width: 320px;
+          height: 70px;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          margin: 2vh auto;
+          /* background-color: darkgreen; */
+        }
+        #footer-text-icon-1{
+          width: 60px;
+          height: 60px;
+          border-radius: 10px;
+          box-shadow: 5px 5px 0 0 rgb(0,200,175);
+          border: 1px solid black;
+          transition: 0.6s;
+          background-color: white;
+        }
+        #footer-text-icon-1 i{
+          font-size: 25px;
+          margin-left: 1.2vw;
+          margin-top: 2.5vh;
+          color: rgb(0,200,175);
+        }
+        #footer-text-icon-1:hover{
+          background-color: black;
+        }
+
+
+
+        #footer{
+          width: 90%;
+          height: 30vh;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+          align-items: center;
+          margin: 5vh auto;
+          /* background-color: blue; */
+        }
+        #footer-1{
+          width: 200px;
+          height: 250px;
+          /* background-color: lightblue; */
+          line-height: 35px;
+        }
+        #footer-1 span{
+          font-size: 16px;
+          font-weight: bold;
+          color: rgb(32, 32, 32);
+        }
+        #footer-1 p{
+          font-size: 15px;
+          transition: 0.5s;
+          color: rgb(32, 32, 32);
+        }
+        #footer-1 p:hover{
+          color: rgb(0,200,175);
+          cursor: pointer;
+        }
+
+        #footer-copyright{
+          width: 100%;
+          height: 15vh;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 0vh auto;
+          /* background-color: darkkhaki; */
+        }
+        #footer-copyright p{
+          text-align: center;
+          width: 450px;
+        }
+        #footer-copyright p span{
+          font-size: 15px;
+          transition: 0.5s;
+        }
+        #footer-copyright p span:hover{
+          color: rgb(0,200,175);
+          cursor: pointer;
+        }
+        #footer-push{
+          width: 130px;
+          height: 130px;
+          left: 10vw;
+          margin-top: 10vh;
+          position: absolute;
+          /* background-color: darkgreen;   */
+        }
+        #footer-push img{
+          width: 100%;
+        }
+
+
+        
+
+
+ </style>
+
+
+
+
+</head>
+<body>
+  <script>
+    AOS.init();
+  </script>
+
+
+
+  <div id="navbar">
+    <div id="logo"><a href="./index.html"><img src="./NeoReach-Images/logo.svg" alt=""></a></div>
+    <div id="nav">
+      <ul>
+        <li><a href="./solutions-neoreach.html">Solutions</a>
+          <div id="li-1-hide-image">
+            <img src="./NeoReach-Images/underline@2x.png" alt="">
+          </div>
+          <div id="li-1-hide">
+            <div id="li-1-hide-left">
+              <div id="hide-left-1">
+                <div id="hide-left-1-image">
+                  <img src="./NeoReach-Images/menuicon-services.svg" alt=""></div>
+                <div id="hide-left-1-heading">Managed Services</div>
+                <div id="hide-left-1-para">
+                  Full service influencer marketing campaigns.</div>
+              </div>
+
+              <div id="hide-left-1">
+                <div id="hide-left-1-image">
+                  <img src="./NeoReach-Images/menuicon-software.svg" alt=""></div>
+                <div id="hide-left-1-heading">Software</div>
+                <div id="hide-left-1-para">
+                  Seamlessly search, manage, and track influencer campaigns.</div>
+              </div>
+
+              <div id="hide-left-1">
+                <div id="hide-left-1-image">
+                  <img src="./NeoReach-Images/menuicon-paid.svg" alt=""></div>
+                <div id="hide-left-1-heading">Paid Media</div>
+                <div id="hide-left-1-para">
+                  Develop and execute influencer driven performance marketing campaigns.</div>
+              </div>
+
+            </div>
+            <div id="li-1-hide-right">
+              <div id="hide-right-1">
+                <div id="hide-right-1-image">
+                  <img src="./NeoReach-Images/menuicon-fraud.svg" alt=""></div>
+                <div id="hide-right-1-heading">Froud Detection</div>
+                <div id="hide-right-1-para">
+                  Seamlessly search, manage, and track influencer campaigns.</div>
+              </div>
+
+              <div id="hide-right-1">
+                <div id="hide-right-1-image">
+                  <img src="./NeoReach-Images/menuicon-api.svg" alt=""></div>
+                <div id="hide-right-1-heading">API</div>
+                <div id="hide-right-1-para">
+                  Develop and execute influencer driven performance marketing campaigns.</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="./Service-NeoReach.html">Services</a>
+          <div id="li-1-hide-image">
+            <img src="./NeoReach-Images/underline@2x.png" alt="">
+          </div></li>
+        <li><a href="./case-studies.html">Case Studies</a>
+          <div id="li-1-hide-image-1">
+            <img src="./NeoReach-Images/underline@2x.png" alt="">
+          </div></li>
+        <li><a href="">Pricing</a>
+          <div id="li-1-hide-image">
+            <img src="./NeoReach-Images/underline@2x.png" alt="">
+          </div></li>
+        <li><a href="">Resources</a>
+          <div id="li-1-hide-image">
+            <img src="./NeoReach-Images/underline@2x.png" alt="">
+          </div>
+          <div id="li-2-hide">
+              <div id="li-2-hide-left">
+                <div id="li-2-hide-left-1">
+                  <h3>Blog</h3><br>
+                  <p>Stay updated with the latest influencer marketing trends, tips, and topics.</p>
+                </div>
+                <div id="li-2-hide-left-2">
+                  <h3>Top Lists</h3><br>
+                  <p>Discover the most definitive list of influencers across a range of categories.</p>
+                </div>
+              </div>
+              <div id="li-2-hide-right">
+                <div id="li-2-hide-left-1">
+                  <h3>Top Spenders</h3><br>
+                  <p>See the top brand spenders in influencer marketing this week.</p>
+                </div>
+                <div id="li-2-hide-left-2">
+                  <h3>Industry Reports</h3><br>
+                  <p>Explore leading influencer marketing industry reports.</p>
+                </div>
+              </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="login">
+      <h3>Login</h3>
+      &nbsp;&nbsp;&nbsp;
+      <button>GET STARTED</button>
+    </div>
+</div>
+
+
+ 
+
+<div id="home-main">
+  
+  
+  <div id="home-main-text">
+    <div id="home-main-text-heading">
+      Top influencer marketing case studies.</div>
+    <div id="home-main-text-para">
+      See how we're reinventing the way teams activate influencer marketing campaigns.
+    </div>
+  </div>
+  
+  
+  <div id="access">
+
+      <img id="access-image-1" src="./Case-Studies-images/cs-hero-base@2x.png" alt="">
+    
+      <div id="access-image-2" data-aos="fade-up-right">
+        <img src="./Case-Studies-images/cs-girl1@2x.png" alt="">
+      </div>
+      
+      <div id="access-image-3" data-aos="fade-up-right">
+        <img src="./Case-Studies-images/cs-hand1.svg" alt="">
+      </div>
+  
+      <div id="access-image-4"  data-aos="fade-up">
+        <img src="./Case-Studies-images/cs-guy@2x.png" alt="">
+      </div>
+
+      <div id="access-image-5" data-aos="fade-up-left">
+        <img src="./Case-Studies-images/cs-hand2.svg" alt="">
+      </div>
+
+      <div id="access-image-6" data-aos="fade-up-left">
+        <img src="./Case-Studies-images/cs-hand1.svg" alt="">
+      </div>
+
+      <div id="access-image-7" data-aos="fade-up-left">
+        <img src="./Case-Studies-images/cs-girl2@2x.png" alt="">
+      </div>
+
+      <div id="access-image-8" data-aos="fade-up-left">
+        <img src="./Case-Studies-images/cs-circle1@2x.png" alt="">
+      </div>
+
+      <div id="access-image-9" data-aos="fade-up-right">
+        <img src="./Case-Studies-images/cs-circle2@2x.png" alt="">
+      </div>
+
+      <div id="access-image-10" data-aos="fade-up-left">
+        <img src="./Case-Studies-images/cs-device1@2x.png" alt="">
+      </div>
+
+      <div id="access-image-11" data-aos="fade-up-right">
+        <img src="./Case-Studies-images/cs-device2@2x.png" alt="">
+      </div>
+
+      <div id="access-image-12"  data-aos="fade-up">
+        <img src="./Case-Studies-images/cs-device3@2x.png" alt="">
+      </div>
+
+      <div id="access-image-13"  data-aos="fade-up-left">
+        <img src="./Case-Studies-images/cs-device4.svg" alt="">
+      </div>
+
+        <div id="girl-1-line">
+          <div id="girl-1-dot"></div>
+        </div>
+
+        <div id="girl-1-line-2">
+          <div id="girl-1-dot-2"></div>
+        </div>
+
+        <div id="graph-lines">
+          <div id="graph-line-1"></div>
+          <div id="graph-line-2"></div>
+          <div id="graph-line-3"></div>
+          <div id="graph-line-4"></div>
+          <div id="graph-line-5"></div>
+          <div id="graph-line-6"></div>
+          <div id="graph-line-7"></div>
+          <div id="graph-line-8"></div>
+        </div>
+
+        <div id="blink-lines">
+          <img src="./Case-Studies-images/cs-blinklines.svg" alt="">
+        </div>
+
+    </div>
+
+
+    <div id="brands-main-parent">
+    
+      <div id="brands-main">
+      
+      <div id="brands">
+        <img src="./Case-Studies-images/logo-airbnb@2x.png" alt="">
+        <img src="./Case-Studies-images/logo-amazon@2x.png" alt="">
+        <img src="./Case-Studies-images/logo-bet@2x.png" alt="">
+        <img src="./Case-Studies-images/logo-casper@2x.png" alt="">
+        <img src="./Case-Studies-images/logo-fanduel@2x.png" alt="">
+        <img src="./Case-Studies-images/logo-honda@2x.png" alt="">
+        <img src="./Case-Studies-images/logo-nyt@2x.png" alt="">
+        <img src="./Case-Studies-images/logo-tlc@2x.png" alt="">
+        <img src="./Case-Studies-images/logo-walmart@2x.png" alt="">
+      </div>
+
+      <div id="brands">
+        <img src="./Case-Studies-images/logo-airbnb@2x.png" alt="">
+        <img src="./Case-Studies-images/logo-amazon@2x.png" alt="">
+        <img src="./Case-Studies-images/logo-bet@2x.png" alt="">
+        <img src="./Case-Studies-images/logo-casper@2x.png" alt="">
+        <img src="./Case-Studies-images/logo-fanduel@2x.png" alt="">
+        <img src="./Case-Studies-images/logo-honda@2x.png" alt="">
+        <img src="./Case-Studies-images/logo-nyt@2x.png" alt="">
+        <img src="./Case-Studies-images/logo-tlc@2x.png" alt="">
+        <img src="./Case-Studies-images/logo-walmart@2x.png" alt="">
+      </div>
+
+    </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div id="studies-main"> 
+
+    <div id="studies">
+
+      <div id="studies-a">
+        <div id="studies-image">
+          <img src="./NeoReach-Images/Macys-Logo-black-e1619447007844.png" alt="">
+        </div>
+        <div id="studies-para">
+          NeoReach launched Market by Macy’s, <br> a new location and store chain with <br> influencer marketing.
+        </div>
+        <div id="studies-table">
+          <div id="studies-table-1">
+            <img src="./NeoReach-Images/cs-icon-graph.svg" alt=""><br>
+            <p>1.57X</p>
+          </div>
+          <div id="studies-table-2">
+            <img src="./NeoReach-Images/cs-icon-talk.svg" alt="">
+            <p>2K+</p>
+          </div>
+          <div id="studies-table-3">ROI</div>
+          <div id="studies-table-4">Fan Engagements</div>
+        </div>
+        <button>LEARN MORE</button>
+      </div>
+
+      <div id="studies-a">
+          <div id="studies-image">
+              <img src="./NeoReach-Images/IMC-toys-logo-influencer-marketing-campaign-e1619711722841.jpeg" alt="">
+          </div>
+          <div id="studies-para">
+            How NeoReach achieved over 2.5 <br> Million impressions for IMC Toys with its <br> targeted influencer campaign
+          </div>
+          <div id="studies-table">
+            <div id="studies-table-1">
+              <img src="./NeoReach-Images/cs-icon-views.svg" alt=""><br>
+              <p>2.5M+</p>
+            </div>
+            <div id="studies-table-2">
+              <img src="./NeoReach-Images/cs-icon-cost.svg" alt="">
+              <p>1.6X</p>
+            </div>
+            <div id="studies-table-3">Impressions</div>
+            <div id="studies-table-4">ROI</div>
+          </div>
+          <button>LEARN MORE</button>
+        </div>
+
+      <div id="studies-a">
+          <div id="studies-image">
+            <img src="./NeoReach-Images/nvidia-black-e1625687232142.png" alt="">
+          </div>
+          <div id="studies-para">
+            NeoReach knew exactly what to do to <br> activate NVIDIA's goal and secure <br> 48.3M impressions.
+          </div>
+          <div id="studies-table">
+            <div id="studies-table-1">
+              <img src="./NeoReach-Images/cs-icon-influencers.svg" alt=""><br>
+              <p>13.4M</p>
+            </div>
+            <div id="studies-table-2">
+              <img src="./NeoReach-Images/cs-icon-views.svg" alt="">
+              <p>48.3M</p>
+            </div>
+            <div id="studies-table-3">Total Reach</div>
+            <div id="studies-table-4">Impressions</div>
+          </div>
+          <button>LEARN MORE</button>
+      </div>
+      <div id="studies-a">
+        <div id="studies-image">
+          <img src="./NeoReach-Images/Macys-Logo-black-e1619447007844.png" alt="">
+        </div>
+        <div id="studies-para">
+          NeoReach launched Market by Macy’s, <br> a new location and store chain with <br> influencer marketing.
+        </div>
+        <div id="studies-table">
+          <div id="studies-table-1">
+            <img src="./NeoReach-Images/cs-icon-graph.svg" alt=""><br>
+            <p>1.57X</p>
+          </div>
+          <div id="studies-table-2">
+            <img src="./NeoReach-Images/cs-icon-talk.svg" alt="">
+            <p>2K+</p>
+          </div>
+          <div id="studies-table-3">ROI</div>
+          <div id="studies-table-4">Fan Engagements</div>
+        </div>
+        <button>LEARN MORE</button>
+      </div>
+
+      <div id="studies-a">
+          <div id="studies-image">
+              <img src="./NeoReach-Images/IMC-toys-logo-influencer-marketing-campaign-e1619711722841.jpeg" alt="">
+          </div>
+          <div id="studies-para">
+            How NeoReach achieved over 2.5 <br> Million impressions for IMC Toys with its <br> targeted influencer campaign
+          </div>
+          <div id="studies-table">
+            <div id="studies-table-1">
+              <img src="./NeoReach-Images/cs-icon-views.svg" alt=""><br>
+              <p>2.5M+</p>
+            </div>
+            <div id="studies-table-2">
+              <img src="./NeoReach-Images/cs-icon-cost.svg" alt="">
+              <p>1.6X</p>
+            </div>
+            <div id="studies-table-3">Impressions</div>
+            <div id="studies-table-4">ROI</div>
+          </div>
+          <button>LEARN MORE</button>
+        </div>
+
+      <div id="studies-a">
+          <div id="studies-image">
+            <img src="./NeoReach-Images/nvidia-black-e1625687232142.png" alt="">
+          </div>
+          <div id="studies-para">
+            NeoReach knew exactly what to do to <br> activate NVIDIA's goal and secure <br> 48.3M impressions.
+          </div>
+          <div id="studies-table">
+            <div id="studies-table-1">
+              <img src="./NeoReach-Images/cs-icon-influencers.svg" alt=""><br>
+              <p>13.4M</p>
+            </div>
+            <div id="studies-table-2">
+              <img src="./NeoReach-Images/cs-icon-views.svg" alt="">
+              <p>48.3M</p>
+            </div>
+            <div id="studies-table-3">Total Reach</div>
+            <div id="studies-table-4">Impressions</div>
+          </div>
+          <button>LEARN MORE</button>
+      </div>
+      <div id="studies-a">
+        <div id="studies-image">
+          <img src="./NeoReach-Images/Macys-Logo-black-e1619447007844.png" alt="">
+        </div>
+        <div id="studies-para">
+          NeoReach launched Market by Macy’s, <br> a new location and store chain with <br> influencer marketing.
+        </div>
+        <div id="studies-table">
+          <div id="studies-table-1">
+            <img src="./NeoReach-Images/cs-icon-graph.svg" alt=""><br>
+            <p>1.57X</p>
+          </div>
+          <div id="studies-table-2">
+            <img src="./NeoReach-Images/cs-icon-talk.svg" alt="">
+            <p>2K+</p>
+          </div>
+          <div id="studies-table-3">ROI</div>
+          <div id="studies-table-4">Fan Engagements</div>
+        </div>
+        <button>LEARN MORE</button>
+      </div>
+
+      <div id="studies-a">
+          <div id="studies-image">
+              <img src="./NeoReach-Images/IMC-toys-logo-influencer-marketing-campaign-e1619711722841.jpeg" alt="">
+          </div>
+          <div id="studies-para">
+            How NeoReach achieved over 2.5 <br> Million impressions for IMC Toys with its <br> targeted influencer campaign
+          </div>
+          <div id="studies-table">
+            <div id="studies-table-1">
+              <img src="./NeoReach-Images/cs-icon-views.svg" alt=""><br>
+              <p>2.5M+</p>
+            </div>
+            <div id="studies-table-2">
+              <img src="./NeoReach-Images/cs-icon-cost.svg" alt="">
+              <p>1.6X</p>
+            </div>
+            <div id="studies-table-3">Impressions</div>
+            <div id="studies-table-4">ROI</div>
+          </div>
+          <button>LEARN MORE</button>
+        </div>
+
+      <div id="studies-a">
+          <div id="studies-image">
+            <img src="./NeoReach-Images/nvidia-black-e1625687232142.png" alt="">
+          </div>
+          <div id="studies-para">
+            NeoReach knew exactly what to do to <br> activate NVIDIA's goal and secure <br> 48.3M impressions.
+          </div>
+          <div id="studies-table">
+            <div id="studies-table-1">
+              <img src="./NeoReach-Images/cs-icon-influencers.svg" alt=""><br>
+              <p>13.4M</p>
+            </div>
+            <div id="studies-table-2">
+              <img src="./NeoReach-Images/cs-icon-views.svg" alt="">
+              <p>48.3M</p>
+            </div>
+            <div id="studies-table-3">Total Reach</div>
+            <div id="studies-table-4">Impressions</div>
+          </div>
+          <button>LEARN MORE</button>
+      </div>
+      <div id="studies-a">
+        <div id="studies-image">
+          <img src="./NeoReach-Images/Macys-Logo-black-e1619447007844.png" alt="">
+        </div>
+        <div id="studies-para">
+          NeoReach launched Market by Macy’s, <br> a new location and store chain with <br> influencer marketing.
+        </div>
+        <div id="studies-table">
+          <div id="studies-table-1">
+            <img src="./NeoReach-Images/cs-icon-graph.svg" alt=""><br>
+            <p>1.57X</p>
+          </div>
+          <div id="studies-table-2">
+            <img src="./NeoReach-Images/cs-icon-talk.svg" alt="">
+            <p>2K+</p>
+          </div>
+          <div id="studies-table-3">ROI</div>
+          <div id="studies-table-4">Fan Engagements</div>
+        </div>
+        <button>LEARN MORE</button>
+      </div>
+
+      <div id="studies-a">
+          <div id="studies-image">
+              <img src="./NeoReach-Images/IMC-toys-logo-influencer-marketing-campaign-e1619711722841.jpeg" alt="">
+          </div>
+          <div id="studies-para">
+            How NeoReach achieved over 2.5 <br> Million impressions for IMC Toys with its <br> targeted influencer campaign
+          </div>
+          <div id="studies-table">
+            <div id="studies-table-1">
+              <img src="./NeoReach-Images/cs-icon-views.svg" alt=""><br>
+              <p>2.5M+</p>
+            </div>
+            <div id="studies-table-2">
+              <img src="./NeoReach-Images/cs-icon-cost.svg" alt="">
+              <p>1.6X</p>
+            </div>
+            <div id="studies-table-3">Impressions</div>
+            <div id="studies-table-4">ROI</div>
+          </div>
+          <button>LEARN MORE</button>
+        </div>
+
+      <div id="studies-a">
+          <div id="studies-image">
+            <img src="./NeoReach-Images/nvidia-black-e1625687232142.png" alt="">
+          </div>
+          <div id="studies-para">
+            NeoReach knew exactly what to do to <br> activate NVIDIA's goal and secure <br> 48.3M impressions.
+          </div>
+          <div id="studies-table">
+            <div id="studies-table-1">
+              <img src="./NeoReach-Images/cs-icon-influencers.svg" alt=""><br>
+              <p>13.4M</p>
+            </div>
+            <div id="studies-table-2">
+              <img src="./NeoReach-Images/cs-icon-views.svg" alt="">
+              <p>48.3M</p>
+            </div>
+            <div id="studies-table-3">Total Reach</div>
+            <div id="studies-table-4">Impressions</div>
+          </div>
+          <button>LEARN MORE</button>
+      </div>
+      <div id="studies-a">
+        <div id="studies-image">
+          <img src="./NeoReach-Images/nvidia-black-e1625687232142.png" alt="">
+        </div>
+        <div id="studies-para">
+          NeoReach knew exactly what to do to <br> activate NVIDIA's goal and secure <br> 48.3M impressions.
+        </div>
+        <div id="studies-table">
+          <div id="studies-table-1">
+            <img src="./NeoReach-Images/cs-icon-influencers.svg" alt=""><br>
+            <p>13.4M</p>
+          </div>
+          <div id="studies-table-2">
+            <img src="./NeoReach-Images/cs-icon-views.svg" alt="">
+            <p>48.3M</p>
+          </div>
+          <div id="studies-table-3">Total Reach</div>
+          <div id="studies-table-4">Impressions</div>
+        </div>
+        <button>LEARN MORE</button>
+    </div>
+    <div id="studies-a">
+      <div id="studies-image">
+        <img src="./NeoReach-Images/Macys-Logo-black-e1619447007844.png" alt="">
+      </div>
+      <div id="studies-para">
+        NeoReach launched Market by Macy’s, <br> a new location and store chain with <br> influencer marketing.
+      </div>
+      <div id="studies-table">
+        <div id="studies-table-1">
+          <img src="./NeoReach-Images/cs-icon-graph.svg" alt=""><br>
+          <p>1.57X</p>
+        </div>
+        <div id="studies-table-2">
+          <img src="./NeoReach-Images/cs-icon-talk.svg" alt="">
+          <p>2K+</p>
+        </div>
+        <div id="studies-table-3">ROI</div>
+        <div id="studies-table-4">Fan Engagements</div>
+      </div>
+      <button>LEARN MORE</button>
+    </div>
+
+    <div id="studies-a">
+        <div id="studies-image">
+            <img src="./NeoReach-Images/IMC-toys-logo-influencer-marketing-campaign-e1619711722841.jpeg" alt="">
+        </div>
+        <div id="studies-para">
+          How NeoReach achieved over 2.5 <br> Million impressions for IMC Toys with its <br> targeted influencer campaign
+        </div>
+        <div id="studies-table">
+          <div id="studies-table-1">
+            <img src="./NeoReach-Images/cs-icon-views.svg" alt=""><br>
+            <p>2.5M+</p>
+          </div>
+          <div id="studies-table-2">
+            <img src="./NeoReach-Images/cs-icon-cost.svg" alt="">
+            <p>1.6X</p>
+          </div>
+          <div id="studies-table-3">Impressions</div>
+          <div id="studies-table-4">ROI</div>
+        </div>
+        <button>LEARN MORE</button>
+      </div>
+
+    <div id="studies-a" class="studies-end">
+        <div id="studies-image">
+          <img src="./NeoReach-Images/nvidia-black-e1625687232142.png" alt="">
+        </div>
+        <div id="studies-para">
+          NeoReach knew exactly what to do to <br> activate NVIDIA's goal and secure <br> 48.3M impressions.
+        </div>
+        <div id="studies-table">
+          <div id="studies-table-1">
+            <img src="./NeoReach-Images/cs-icon-influencers.svg" alt=""><br>
+            <p>13.4M</p>
+          </div>
+          <div id="studies-table-2">
+            <img src="./NeoReach-Images/cs-icon-views.svg" alt="">
+            <p>48.3M</p>
+          </div>
+          <div id="studies-table-3">Total Reach</div>
+          <div id="studies-table-4">Impressions</div>
+        </div>
+        <button>LEARN MORE</button>
+    </div>
+
+    </div>
+    
+  </div>
+
+
+
+  <div id="evaluaton-main">
+    <div id="evaluaton-image">
+      <img src="./Solution-Neoreach-images/icon-thumbsup.svg" alt="">
+    </div>
+    <div id="evaluaton-text">
+      <div id="evaluaton-text-heading">
+        "NeoReach can drive social conversation, sentiment, and conversions in a way no one can, for a cost no one can match"
+      </div>
+      <div id="evaluaton-text-para">
+        - Ryan Faber, Fanduel
+      </div>
+    </div>
+
+    <div id="banner-pink">
+      <img src="./Solution-Neoreach-images/quote-sketchline@2x.png" alt="">
+    </div>
+
+    <div id="banner-pink-2">
+      <img src="./Solution-Neoreach-images/quote-sketchline@2x.png" alt="">
+    </div>
+    <div id="evaluation-line">
+      <img src="./Solution-Neoreach-images/ornament2.svg" alt="">
+    </div>
+
+  </div>
+
+
+
+  <div id="form-main"> 
+    <div id="form-image">
+      <img src="./NeoReach-Images/footer-base@2x.png" alt="">
+      
+      <div id="form-search-main">
+        <div id="form-search"><img src="./NeoReach-Images/search-bar@2x.png" alt=""></div>
+        <hr>
+        <div id="form-search-dots"><img src="./NeoReach-Images/search-dots.svg" alt=""></div>
+      </div>
+      <div id="form-massage">
+        <img src="./NeoReach-Images/talkbubble-girl@2x.png" alt="">
+      </div>
+      <div id="form-massage-2">
+        <img src="./NeoReach-Images/talkbubble-blank@2x.png" alt="">
+      </div>
+      <div id="form-massage-3">
+        <img src="./NeoReach-Images/talkbubble-guy@2x.png" alt="">
+      </div>
+      <div id="form-opacity-dots">
+        <div id="form-opacity-dots-1">
+          <div id="form-opacity-dots-1-a"></div>
+        </div>
+        <div id="form-opacity-dots-1">
+          <div id="form-opacity-dots-1-b"></div>
+          <div id="form-opacity-dots-1-c"></div>
+        </div>
+        <div id="form-opacity-dots-1">
+          <div id="form-opacity-dots-1-d"></div>
+          <div id="form-opacity-dots-1-e"></div>
+          <div id="form-opacity-dots-1-f"></div>
+        </div>
+        <div id="form-opacity-dots-1">
+          <div id="form-opacity-dots-1-g"></div>
+          <div id="form-opacity-dots-1-h"></div>
+          <div id="form-opacity-dots-1-i"></div>
+          <div id="form-opacity-dots-1-j"></div>
+        </div>
+      </div>
+
+      <div id="form-2-opacity-dots">
+        <div id="form-opacity-dots-1">
+          <div id="form-opacity-dots-1-a"></div>
+        </div>
+        <div id="form-opacity-dots-1">
+          <div id="form-opacity-dots-1-b"></div>
+          <div id="form-opacity-dots-1-c"></div>
+        </div>
+        <div id="form-opacity-dots-1">
+          <div id="form-opacity-dots-1-d"></div>
+          <div id="form-opacity-dots-1-e"></div>
+          <div id="form-opacity-dots-1-f"></div>
+        </div>
+        <div id="form-opacity-dots-1">
+          <div id="form-opacity-dots-1-g"></div>
+          <div id="form-opacity-dots-1-h"></div>
+          <div id="form-opacity-dots-1-i"></div>
+          <div id="form-opacity-dots-1-j"></div>
+        </div>
+      </div>
+      <div id="form-wave-parent">
+        <div id="form-wave">
+          <img id="form-wave-image1" src="./NeoReach-Images/graph-wave@2x.png" alt="">
+          <img id="form-wave-image2" src="./NeoReach-Images/graph-wave@2x.png" alt="">
+        </div>
+      </div>
+
+    </div>
+    <div id="form-text">
+      <div id="form-text-heading">Start a campaign with us!</div>
+      <div id="form-text-para">
+        Submit the form below, tell us a bit more about <br>
+        your business, and we’ll be in touch shortly. <br>
+        Are you an Influencer? Sign up<span> here</span>
+      </div>
+    </div>
+    <div id="form">
+      <input type="text" id="text1" placeholder="   * First Name">
+      <input type="text" id="text1" placeholder="   * Last Name">
+      <input type="email" id="text1" placeholder="  * Business Email">
+      <input type="number" id="text1" placeholder="  * Contect Phone Number">
+      <input type="text" id="text1" placeholder="  * Company Name">
+      <input type="text" id="text1" placeholder="  * Company Website">
+      <select name="Budget" id="text1">
+        <option value="Budget">* Budget</option>
+        <option value="Budget">Under $20,000</option>
+        <option value="Budget">$20,000 - $49,000</option>
+        <option value="Budget">$50,000 - $99,000</option>
+        <option value="Budget">$100,000 - $249,000</option>
+        <option value="Budget">$250,000 - $499,000</option>
+        <option value="Budget">#500,000 +</option>
+      </select>
+      <select name="* Conpany Size" id="text1">
+        <option value="Budget">* Conpany Name</option>
+        <option value="Budget">1</option>
+        <option value="Budget">2 - 5</option>
+        <option value="Budget">6 - 10</option>
+        <option value="Budget">11 - 25</option>
+        <option value="Budget">26 - 50</option>
+        <option value="Budget">51 - 200</option>
+      </select>
+      <textarea name="" id="text2" cols="30" rows="10" placeholder="  Describe What you're looking to achieve - be as discribted as possible"></textarea>
+      <button>LET'S CHAT!</button>
+    </div>
+
+    <div id="poster">
+      <img id="poster-image1" src="./NeoReach-Images/footer-photobg@2x.png" alt="">
+      <img id="poster-image2" src="./NeoReach-Images/footer-photo1@2x.jpg" alt="">
+    </div>
+  </div>
+
+  <div id="footer-main">
+
+
+    <div id="footer-push">  
+      <img src="./Solution-Neoreach-images/footer-seal@2x.png" alt="">
+    </div>
+    <div id="footer-text">
+      <div id="footer-text-image"><img src="./NeoReach-Images/logo.svg" alt=""></div>
+      <div id="footer-text-heading">
+        Seamlessly search, manage, and track <br>
+        user-generated content campaigns.
+      </div>
+      <div id="footer-text-icons">
+        <div id="footer-text-icon-1"><i class="fab fa-facebook-f"></i></div>
+        <div id="footer-text-icon-1"><i class="fab fa-twitter"></i></div>
+        <div id="footer-text-icon-1"><i class="fab fa-instagram"></i></div>
+        <div id="footer-text-icon-1"><i class="fab fa-linkedin-in"></i></div>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="footer-1">
+        <span>Advertisers</span>
+        <p>Pricing</p>
+        <p>Case Studies</p>
+        <p>Advertiser FAQ</p>
+      </div>
+      <div id="footer-1">
+        <span>Influencers</span>
+        <p>Community</p>
+        <p>Influencer FAQ</p>
+        <p>Influencer Guidlines</p>
+        <p>Influencer Sign Up</p>
+      </div>
+      <div id="footer-1">
+        <span>Solutions</span>
+        <p>Services</p>
+        <p>Software</p>
+        <p>API</p>
+        <p>Froud Detection</p>
+      </div>
+      <div id="footer-1">
+        <span>Resources</span>
+        <p>Meet the Team</p>
+        <p>Press</p>
+        <p>Privacy</p>
+        <p>Customer Support</p>
+      </div>
+      <div id="footer-1">
+        <span>Contect</span>
+        <p>Email:Team@neoreach.com</p>
+        <p>Careers</p>
+      </div>
+    </div>
+    <div id="footer-copyright">
+      <p>© 2021. All Rights Reserved.</p>
+      <p>Design: <span>Griflan</span></p>
+    </div>
+
+
+  </div>
+
+  
+</body>
+</html>
